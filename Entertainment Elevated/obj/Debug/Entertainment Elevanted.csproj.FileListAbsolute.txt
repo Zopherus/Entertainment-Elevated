@@ -1,0 +1,10 @@
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\bin\Debug\Entertainment Elevanted.exe.config
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\bin\Debug\Entertainment Elevanted.exe
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\bin\Debug\Entertainment Elevanted.pdb
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment Elevanted.csprojResolveAssemblyReference.cache
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment_Elevanted.EmployeeForm.resources
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment_Elevanted.MainForm.resources
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment_Elevanted.Properties.Resources.resources
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment Elevanted.csproj.GenerateResource.Cache
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment Elevanted.exe
+C:\Users\ejz19\Desktop\Github\Entertainment Elevanted\Entertainment Elevanted\obj\Debug\Entertainment Elevanted.pdb
