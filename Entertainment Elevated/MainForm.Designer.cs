@@ -1,4 +1,4 @@
-﻿namespace Entertainment_Elevanted
+﻿namespace Entertainment_Elevated
 {
     partial class MainForm
     {
@@ -31,12 +31,13 @@
             this.EmployeeButton = new System.Windows.Forms.Button();
             this.CustomerButton = new System.Windows.Forms.Button();
             this.ScheduleButton = new System.Windows.Forms.Button();
-            this.BackButton = new System.Windows.Forms.Button();
+            this.MainFormPanel = new System.Windows.Forms.Panel();
+            this.MainFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmployeeButton
             // 
-            this.EmployeeButton.Location = new System.Drawing.Point(5, 12);
+            this.EmployeeButton.Location = new System.Drawing.Point(3, 3);
             this.EmployeeButton.Name = "EmployeeButton";
             this.EmployeeButton.Size = new System.Drawing.Size(163, 120);
             this.EmployeeButton.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // CustomerButton
             // 
-            this.CustomerButton.Location = new System.Drawing.Point(309, 330);
+            this.CustomerButton.Location = new System.Drawing.Point(299, 330);
             this.CustomerButton.Name = "CustomerButton";
             this.CustomerButton.Size = new System.Drawing.Size(163, 120);
             this.CustomerButton.TabIndex = 2;
@@ -56,7 +57,7 @@
             // 
             // ScheduleButton
             // 
-            this.ScheduleButton.Location = new System.Drawing.Point(12, 333);
+            this.ScheduleButton.Location = new System.Drawing.Point(13, 330);
             this.ScheduleButton.Name = "ScheduleButton";
             this.ScheduleButton.Size = new System.Drawing.Size(163, 120);
             this.ScheduleButton.TabIndex = 1;
@@ -64,27 +65,26 @@
             this.ScheduleButton.UseVisualStyleBackColor = true;
             this.ScheduleButton.Click += new System.EventHandler(this.ScheduleButton_Click);
             // 
-            // BackButton
+            // MainFormPanel
             // 
-            this.BackButton.Location = new System.Drawing.Point(13, 477);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(75, 23);
-            this.BackButton.TabIndex = 3;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.MainFormPanel.Controls.Add(this.EmployeeButton);
+            this.MainFormPanel.Controls.Add(this.CustomerButton);
+            this.MainFormPanel.Controls.Add(this.ScheduleButton);
+            this.MainFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainFormPanel.Location = new System.Drawing.Point(0, 0);
+            this.MainFormPanel.Name = "MainFormPanel";
+            this.MainFormPanel.Size = new System.Drawing.Size(484, 512);
+            this.MainFormPanel.TabIndex = 4;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 512);
-            this.Controls.Add(this.BackButton);
-            this.Controls.Add(this.EmployeeButton);
-            this.Controls.Add(this.ScheduleButton);
-            this.Controls.Add(this.CustomerButton);
+            this.Controls.Add(this.MainFormPanel);
             this.Name = "MainForm";
             this.Text = "Entertainment Elevated";
+            this.MainFormPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,7 +94,7 @@
         private System.Windows.Forms.Button EmployeeButton;
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Button ScheduleButton;
-        private System.Windows.Forms.Button BackButton;
+        public System.Windows.Forms.Panel MainFormPanel;
     }
 }
 

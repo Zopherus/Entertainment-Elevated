@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Entertainment_Elevanted
+namespace Entertainment_Elevated
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Entertainment_Elevanted
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new GeneralForm());
         }
     }
 }

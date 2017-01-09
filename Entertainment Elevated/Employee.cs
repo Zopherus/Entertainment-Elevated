@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entertainment_Elevanted
+namespace Entertainment_Elevated
 {
     public enum Positions {};
     public class Employee

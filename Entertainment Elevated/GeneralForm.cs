@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Entertainment_Elevated
 {
-    public partial class EmployeeForm : Form
+    public partial class GeneralForm : Form
     {
-        private List<Employee> Employees = new List<Employee>();
-        public EmployeeForm()
+        public GeneralForm()
         {
+            MainForm mainForm = new MainForm();
+            Controls.Clear();
+            Controls.Add(mainForm.MainFormPanel);
             InitializeComponent();
         }
     }

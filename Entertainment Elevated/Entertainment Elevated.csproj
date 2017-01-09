@@ -7,8 +7,8 @@
     <ProjectGuid>{106095A9-217E-4D24-BD15-D6706C5B9CD7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entertainment_Elevanted</RootNamespace>
-    <AssemblyName>Entertainment Elevanted</AssemblyName>
+    <RootNamespace>Entertainment_Elevated</RootNamespace>
+    <AssemblyName>Entertainment Elevated</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -59,6 +59,12 @@
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForm.Designer.cs">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <EmbeddedResource Include="EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForm.resx">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>

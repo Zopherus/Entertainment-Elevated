@@ -8,38 +8,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Entertainment_Elevanted
+namespace Entertainment_Elevated
 {
+    public enum Page { Main, Employee, Schedule, Customer};
     public partial class MainForm : Form
     {
+        public Page page;
         public MainForm()
         {
             //this.WindowState = FormWindowState.Maximized;
+            page = Page.Main;
             InitializeComponent();
         }
 
         private void EmployeeButton_Click(object sender, EventArgs e)
         {
+            Control obj = (Control)sender;
+            Form form = obj.FindForm();
+            GeneralForm general = (GeneralForm)form;
             EmployeeForm employeeForm = new EmployeeForm();
-            Controls.Clear();
-            Controls.Add(employeeForm.EmployeeFormPanel);
-            BackButton.BringToFront();
+            general.Controls.Clear();
+            general.Controls.Add(employeeForm.EmployeeFormPanel);
         }
 
         private void ScheduleButton_Click(object sender, EventArgs e)
         {
+            Control obj = (Control)sender;
+            Form form = obj.FindForm();
+            GeneralForm general = (GeneralForm)form;
             ScheduleForm scheduleForm = new ScheduleForm();
-            Controls.Clear();
-            Controls.Add(scheduleForm.ScheduleFormPanel);
-            BackButton.BringToFront();
+            general.Controls.Clear();
+            general.Controls.Add(scheduleForm.ScheduleFormPanel);
         }
 
         private void CustomerButton_Click(object sender, EventArgs e)
         {
+            Control obj = (Control)sender;
+            Form form = obj.FindForm();
+            GeneralForm general = (GeneralForm)form;
             CustomerForm customerForm = new CustomerForm();
-            Controls.Clear();
-            Controls.Add(customerForm.CustomerFormPanel);
-            BackButton.BringToFront();
+            general.Controls.Clear();
+            general.Controls.Add(customerForm.CustomerFormPanel);
         }
 
         private void BackButton_Click(object sender, EventArgs e)

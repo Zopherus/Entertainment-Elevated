@@ -1,4 +1,4 @@
-﻿namespace Entertainment_Elevanted
+﻿namespace Entertainment_Elevated
 {
     partial class ScheduleForm
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Entertainment_Elevanted
+namespace Entertainment_Elevated
 {
     public partial class ScheduleForm : Form
     {
@@ -19,7 +19,12 @@ namespace Entertainment_Elevanted
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-
+            Control obj = (Control)sender;
+            Form form = obj.FindForm();
+            GeneralForm general = (GeneralForm)form;
+            MainForm mainForm = new MainForm();
+            general.Controls.Clear();
+            general.Controls.Add(mainForm.MainFormPanel);
         }
     }
 }

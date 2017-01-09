@@ -1,6 +1,6 @@
 ﻿namespace Entertainment_Elevated
 {
-    partial class CustomerForm
+    partial class GeneralForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CustomerFormPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // CustomerFormPanel
-            // 
-            this.CustomerFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomerFormPanel.Location = new System.Drawing.Point(0, 0);
-            this.CustomerFormPanel.Name = "CustomerFormPanel";
-            this.CustomerFormPanel.Size = new System.Drawing.Size(484, 462);
-            this.CustomerFormPanel.TabIndex = 0;
-            // 
-            // CustomerForm
+            // GeneralForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 462);
-            this.Controls.Add(this.CustomerFormPanel);
-            this.Name = "CustomerForm";
-            this.Text = "CustomerForm";
+            this.Name = "GeneralForm";
+            this.Text = "General Form";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Panel CustomerFormPanel;
     }
 }
