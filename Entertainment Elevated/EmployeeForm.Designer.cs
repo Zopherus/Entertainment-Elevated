@@ -38,11 +38,15 @@
             // 
             // EmployeeDataGridView
             // 
+            this.EmployeeDataGridView.AllowDrop = true;
+            this.EmployeeDataGridView.AllowUserToOrderColumns = true;
+            this.EmployeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeDataGridView.Location = new System.Drawing.Point(7, 9);
+            this.EmployeeDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.EmployeeDataGridView.Location = new System.Drawing.Point(0, 0);
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
             this.EmployeeDataGridView.RowHeadersVisible = false;
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(465, 150);
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(484, 150);
             this.EmployeeDataGridView.TabIndex = 0;
             // 
             // EmployeeFormPanel
@@ -55,7 +59,6 @@
             this.EmployeeFormPanel.Name = "EmployeeFormPanel";
             this.EmployeeFormPanel.Size = new System.Drawing.Size(484, 462);
             this.EmployeeFormPanel.TabIndex = 1;
-            this.EmployeeFormPanel.Resize += new System.EventHandler(this.EmployeeFormPanel_Resize);
             // 
             // AddEmployeeButton
             // 

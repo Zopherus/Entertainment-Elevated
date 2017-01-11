@@ -10,16 +10,19 @@ namespace Entertainment_Elevated
     {
         // Set display names for the DataGridView
         [System.ComponentModel.DisplayName("First Name")]
-        public string firstName { get; private set; }
+        public string firstName { get;  set; }
 
         [System.ComponentModel.DisplayName("Last Name")]
-        public string lastName { get; private set; }
+        public string lastName { get;  set; }
 
-        [System.ComponentModel.DisplayName("Cell Phone")]
-        public string cellPhone { get; private set; }
+        [System.ComponentModel.DisplayName("Phone Number")]
+        public string phoneNumber { get;  set; }
 
         [System.ComponentModel.DisplayName("Email")]
-        public string email { get; private set; }
+        public string email { get;  set; }
+
+        [System.ComponentModel.DisplayName("Position")]
+        public string position { get;  set; }
         
 
         public Employee(string FirstName, string LastName)
@@ -28,12 +31,13 @@ namespace Entertainment_Elevated
             lastName = LastName;
         }
 
-        public Employee(string FirstName, string LastName, string CellPhone, string Email)
+        public Employee(string FirstName, string LastName, string PhoneNumber, string Email, string Position)
         {
             firstName = FirstName;
             lastName = LastName;
-            cellPhone = CellPhone;
+            phoneNumber = PhoneNumber;
             email = Email;
+            position = Position;
         }
     }
 }

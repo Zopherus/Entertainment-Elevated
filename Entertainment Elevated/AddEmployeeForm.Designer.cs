@@ -108,7 +108,7 @@
             // 
             this.PositionListView.LabelEdit = true;
             this.PositionListView.LabelWrap = false;
-            this.PositionListView.Location = new System.Drawing.Point(61, 121);
+            this.PositionListView.Location = new System.Drawing.Point(69, 126);
             this.PositionListView.Name = "PositionListView";
             this.PositionListView.Size = new System.Drawing.Size(137, 97);
             this.PositionListView.TabIndex = 9;

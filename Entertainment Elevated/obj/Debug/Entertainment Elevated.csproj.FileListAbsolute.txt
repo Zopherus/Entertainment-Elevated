@@ -43,3 +43,4 @@ C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.exe
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.pdb
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.AddEmployeeForm.resources
+C:\Users\1012746\Desktop\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.AddEmployeeForm.resources

@@ -56,7 +56,7 @@ namespace Entertainment_Elevated
 
         private void AddEmployeeButton_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text);
+            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text,PhoneNumberTextBox.Text, PositionListView.SelectedItems[0].ToString());
             EmployeeForm.Employees.Add(employee);
             this.Close();
         }
