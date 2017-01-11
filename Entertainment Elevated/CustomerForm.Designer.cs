@@ -29,15 +29,28 @@
         private void InitializeComponent()
         {
             this.CustomerFormPanel = new System.Windows.Forms.Panel();
+            this.MenuButton = new System.Windows.Forms.Button();
+            this.CustomerFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CustomerFormPanel
             // 
+            this.CustomerFormPanel.Controls.Add(this.MenuButton);
             this.CustomerFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CustomerFormPanel.Location = new System.Drawing.Point(0, 0);
             this.CustomerFormPanel.Name = "CustomerFormPanel";
             this.CustomerFormPanel.Size = new System.Drawing.Size(484, 462);
             this.CustomerFormPanel.TabIndex = 0;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.Location = new System.Drawing.Point(12, 427);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(75, 23);
+            this.MenuButton.TabIndex = 0;
+            this.MenuButton.Text = "Menu";
+            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // CustomerForm
             // 
@@ -47,6 +60,7 @@
             this.Controls.Add(this.CustomerFormPanel);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
+            this.CustomerFormPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -54,5 +68,6 @@
         #endregion
 
         public System.Windows.Forms.Panel CustomerFormPanel;
+        private System.Windows.Forms.Button MenuButton;
     }
 }

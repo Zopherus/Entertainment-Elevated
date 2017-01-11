@@ -12,10 +12,34 @@ namespace Entertainment_Elevated
 {
     public partial class EmployeeForm : Form
     {
-        private List<Employee> Employees = new List<Employee>();
+        public static List<Employee> Employees = new List<Employee>();
         public EmployeeForm()
         {
             InitializeComponent();
+            Employees.Add(new Employee("Carolyn", "Duong"));
+            EmployeeDataGridView.DataSource = Employees;
+        }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            Control obj = (Control)sender;
+            Form form = obj.FindForm();
+            GeneralForm general = (GeneralForm)form;
+            MainForm mainForm = new MainForm();
+            general.Controls.Clear();
+            general.Controls.Add(mainForm.MainFormPanel);
+        }
+
+        private void AddEmployeeButton_Click(object sender, EventArgs e)
+        {
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm(EmployeeDataGridView);
+            addEmployeeForm.ShowDialog();
+        }
+
+        private void EmployeeFormPanel_Resize(object sender, EventArgs e)
+        {
+            EmployeeDataGridView.DataSource = null;
+            EmployeeDataGridView.DataSource = Employees;
         }
     }
 }

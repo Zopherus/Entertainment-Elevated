@@ -30,6 +30,8 @@
         {
             this.EmployeeDataGridView = new System.Windows.Forms.DataGridView();
             this.EmployeeFormPanel = new System.Windows.Forms.Panel();
+            this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             this.EmployeeFormPanel.SuspendLayout();
             this.SuspendLayout();
@@ -39,17 +41,41 @@
             this.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeDataGridView.Location = new System.Drawing.Point(7, 9);
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.EmployeeDataGridView.RowHeadersVisible = false;
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(465, 150);
             this.EmployeeDataGridView.TabIndex = 0;
             // 
             // EmployeeFormPanel
             // 
+            this.EmployeeFormPanel.Controls.Add(this.AddEmployeeButton);
+            this.EmployeeFormPanel.Controls.Add(this.MenuButton);
             this.EmployeeFormPanel.Controls.Add(this.EmployeeDataGridView);
             this.EmployeeFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeFormPanel.Location = new System.Drawing.Point(0, 0);
             this.EmployeeFormPanel.Name = "EmployeeFormPanel";
             this.EmployeeFormPanel.Size = new System.Drawing.Size(484, 462);
             this.EmployeeFormPanel.TabIndex = 1;
+            this.EmployeeFormPanel.Resize += new System.EventHandler(this.EmployeeFormPanel_Resize);
+            // 
+            // AddEmployeeButton
+            // 
+            this.AddEmployeeButton.Location = new System.Drawing.Point(12, 194);
+            this.AddEmployeeButton.Name = "AddEmployeeButton";
+            this.AddEmployeeButton.Size = new System.Drawing.Size(84, 23);
+            this.AddEmployeeButton.TabIndex = 2;
+            this.AddEmployeeButton.Text = "Add Employee";
+            this.AddEmployeeButton.UseVisualStyleBackColor = true;
+            this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.Location = new System.Drawing.Point(12, 427);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(75, 23);
+            this.MenuButton.TabIndex = 1;
+            this.MenuButton.Text = "Menu";
+            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // EmployeeForm
             // 
@@ -66,8 +92,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView EmployeeDataGridView;
         public System.Windows.Forms.Panel EmployeeFormPanel;
+        private System.Windows.Forms.Button MenuButton;
+        private System.Windows.Forms.Button AddEmployeeButton;
+        public System.Windows.Forms.DataGridView EmployeeDataGridView;
     }
 }

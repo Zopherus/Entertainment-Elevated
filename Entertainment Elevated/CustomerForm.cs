@@ -16,5 +16,15 @@ namespace Entertainment_Elevated
         {
             InitializeComponent();
         }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            Control obj = (Control)sender;
+            Form form = obj.FindForm();
+            GeneralForm general = (GeneralForm)form;
+            MainForm mainForm = new MainForm();
+            general.Controls.Clear();
+            general.Controls.Add(mainForm.MainFormPanel);
+        }
     }
 }

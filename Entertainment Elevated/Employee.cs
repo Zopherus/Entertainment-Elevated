@@ -6,29 +6,34 @@ using System.Threading.Tasks;
 
 namespace Entertainment_Elevated
 {
-    public enum Positions {};
     public class Employee
     {
-        public static List<string> Positions { get; private set; }
-
+        // Set display names for the DataGridView
+        [System.ComponentModel.DisplayName("First Name")]
         public string firstName { get; private set; }
+
+        [System.ComponentModel.DisplayName("Last Name")]
         public string lastName { get; private set; }
+
+        [System.ComponentModel.DisplayName("Cell Phone")]
         public string cellPhone { get; private set; }
+
+        [System.ComponentModel.DisplayName("Email")]
         public string email { get; private set; }
-        public DateTime birthday { get; private set; }
         
 
-        public Employee(string FirstName, string LastName, DateTime Birthday)
+        public Employee(string FirstName, string LastName)
         {
             firstName = FirstName;
             lastName = LastName;
-            birthday = Birthday;
         }
 
-
-        public void AddPosition(string position)
+        public Employee(string FirstName, string LastName, string CellPhone, string Email)
         {
-            Positions.Add(position);
+            firstName = FirstName;
+            lastName = LastName;
+            cellPhone = CellPhone;
+            email = Email;
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.ScheduleFormPanel = new System.Windows.Forms.Panel();
-            this.BackButton = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
             this.ScheduleFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             // 
             // ScheduleFormPanel
             // 
-            this.ScheduleFormPanel.Controls.Add(this.BackButton);
+            this.ScheduleFormPanel.Controls.Add(this.MenuButton);
             this.ScheduleFormPanel.Controls.Add(this.monthCalendar1);
             this.ScheduleFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScheduleFormPanel.Location = new System.Drawing.Point(0, 0);
@@ -50,15 +50,15 @@
             this.ScheduleFormPanel.Size = new System.Drawing.Size(484, 462);
             this.ScheduleFormPanel.TabIndex = 1;
             // 
-            // BackButton
+            // MenuButton
             // 
-            this.BackButton.Location = new System.Drawing.Point(12, 427);
-            this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(75, 23);
-            this.BackButton.TabIndex = 1;
-            this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = true;
-            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            this.MenuButton.Location = new System.Drawing.Point(12, 427);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(75, 23);
+            this.MenuButton.TabIndex = 1;
+            this.MenuButton.Text = "Menu";
+            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // ScheduleForm
             // 
@@ -77,6 +77,6 @@
 
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         public System.Windows.Forms.Panel ScheduleFormPanel;
-        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button MenuButton;
     }
 }

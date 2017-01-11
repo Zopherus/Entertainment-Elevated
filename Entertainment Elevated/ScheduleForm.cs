@@ -17,7 +17,7 @@ namespace Entertainment_Elevated
             InitializeComponent();
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        private void MenuButton_Click(object sender, EventArgs e)
         {
             Control obj = (Control)sender;
             Form form = obj.FindForm();
