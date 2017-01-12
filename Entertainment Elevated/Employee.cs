@@ -1,29 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Xml.Serialization;
 
 namespace Entertainment_Elevated
 {
+    
     public class Employee
     {
         // Set display names for the DataGridView
-        [System.ComponentModel.DisplayName("First Name")]
+        [DisplayName("First Name")]
         public string firstName { get;  set; }
-
-        [System.ComponentModel.DisplayName("Last Name")]
+        
+        [DisplayName("Last Name")]
         public string lastName { get;  set; }
-
-        [System.ComponentModel.DisplayName("Phone Number")]
+        
+        [DisplayName("Phone Number")]
         public string phoneNumber { get;  set; }
-
-        [System.ComponentModel.DisplayName("Email")]
+        
+        [DisplayName("Email")]
         public string email { get;  set; }
-
-        [System.ComponentModel.DisplayName("Position")]
+        
+        [DisplayName("Position")]
         public string position { get;  set; }
         
+
+        public Employee() { }
 
         public Employee(string FirstName, string LastName)
         {

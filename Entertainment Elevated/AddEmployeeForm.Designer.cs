@@ -36,36 +36,37 @@
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.PhoneNumberLabel = new System.Windows.Forms.Label();
-            this.PositionListView = new System.Windows.Forms.ListView();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.PositionComboBox = new System.Windows.Forms.ComboBox();
+            this.PositionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // FirstNameTextBox
             // 
             this.FirstNameTextBox.Location = new System.Drawing.Point(96, 12);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
-            this.FirstNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.FirstNameTextBox.Size = new System.Drawing.Size(166, 20);
             this.FirstNameTextBox.TabIndex = 0;
             // 
             // LastNameTextBox
             // 
             this.LastNameTextBox.Location = new System.Drawing.Point(96, 38);
             this.LastNameTextBox.Name = "LastNameTextBox";
-            this.LastNameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.LastNameTextBox.Size = new System.Drawing.Size(166, 20);
             this.LastNameTextBox.TabIndex = 1;
             // 
             // EmailTextBox
             // 
             this.EmailTextBox.Location = new System.Drawing.Point(96, 64);
             this.EmailTextBox.Name = "EmailTextBox";
-            this.EmailTextBox.Size = new System.Drawing.Size(100, 20);
+            this.EmailTextBox.Size = new System.Drawing.Size(166, 20);
             this.EmailTextBox.TabIndex = 2;
             // 
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.Location = new System.Drawing.Point(96, 90);
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(166, 20);
             this.PhoneNumberTextBox.TabIndex = 3;
             // 
             // FirstNameLabel
@@ -104,34 +105,43 @@
             this.PhoneNumberLabel.TabIndex = 7;
             this.PhoneNumberLabel.Text = "Phone Number:";
             // 
-            // PositionListView
-            // 
-            this.PositionListView.LabelEdit = true;
-            this.PositionListView.LabelWrap = false;
-            this.PositionListView.Location = new System.Drawing.Point(69, 126);
-            this.PositionListView.Name = "PositionListView";
-            this.PositionListView.Size = new System.Drawing.Size(137, 97);
-            this.PositionListView.TabIndex = 9;
-            this.PositionListView.UseCompatibleStateImageBehavior = false;
-            this.PositionListView.View = System.Windows.Forms.View.List;
-            // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(42, 241);
+            this.AddEmployeeButton.Location = new System.Drawing.Point(30, 167);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
-            this.AddEmployeeButton.Size = new System.Drawing.Size(95, 23);
-            this.AddEmployeeButton.TabIndex = 10;
+            this.AddEmployeeButton.Size = new System.Drawing.Size(213, 112);
+            this.AddEmployeeButton.TabIndex = 11;
             this.AddEmployeeButton.Text = "Add Employee";
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
+            // 
+            // PositionComboBox
+            // 
+            this.PositionComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.PositionComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.PositionComboBox.FormattingEnabled = true;
+            this.PositionComboBox.Location = new System.Drawing.Point(96, 116);
+            this.PositionComboBox.Name = "PositionComboBox";
+            this.PositionComboBox.Size = new System.Drawing.Size(166, 21);
+            this.PositionComboBox.TabIndex = 10;
+            // 
+            // PositionLabel
+            // 
+            this.PositionLabel.AutoSize = true;
+            this.PositionLabel.Location = new System.Drawing.Point(9, 124);
+            this.PositionLabel.Name = "PositionLabel";
+            this.PositionLabel.Size = new System.Drawing.Size(47, 13);
+            this.PositionLabel.TabIndex = 12;
+            this.PositionLabel.Text = "Position:";
             // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(218, 291);
+            this.ClientSize = new System.Drawing.Size(274, 291);
+            this.Controls.Add(this.PositionLabel);
+            this.Controls.Add(this.PositionComboBox);
             this.Controls.Add(this.AddEmployeeButton);
-            this.Controls.Add(this.PositionListView);
             this.Controls.Add(this.PhoneNumberLabel);
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.LastNameLabel);
@@ -159,7 +169,8 @@
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label PhoneNumberLabel;
-        private System.Windows.Forms.ListView PositionListView;
         private System.Windows.Forms.Button AddEmployeeButton;
+        private System.Windows.Forms.ComboBox PositionComboBox;
+        private System.Windows.Forms.Label PositionLabel;
     }
 }

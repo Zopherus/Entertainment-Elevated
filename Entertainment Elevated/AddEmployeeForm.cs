@@ -37,9 +37,7 @@ namespace Entertainment_Elevated
             }
             catch
             { }
-            PositionListView.Items.Add(Positions[0]);
-            PositionListView.Items.Add(Positions[1]);
-            PositionListView.Items.Add(Positions[2]);
+            PositionComboBox.Items.AddRange(Positions.ToArray());
         }
 
         private void AddEmployeeForm_FormClosed(object sender, EventArgs e)
@@ -56,9 +54,9 @@ namespace Entertainment_Elevated
 
         private void AddEmployeeButton_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text,PhoneNumberTextBox.Text, PositionListView.SelectedItems[0].ToString());
+            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text, EmailTextBox.Text, PositionComboBox.Text);
             EmployeeForm.Employees.Add(employee);
-            this.Close();
+            Close();
         }
     }
 }

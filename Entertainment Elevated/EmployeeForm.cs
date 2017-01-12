@@ -16,9 +16,7 @@ namespace Entertainment_Elevated
         public EmployeeForm()
         {
             InitializeComponent();
-            Employees.Add(new Employee("Eric", "Zhu"));
             EmployeeDataGridView.DataSource = Employees;
-            
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
