@@ -38,7 +38,6 @@
             // 
             // EmployeeDataGridView
             // 
-            this.EmployeeDataGridView.AllowDrop = true;
             this.EmployeeDataGridView.AllowUserToOrderColumns = true;
             this.EmployeeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

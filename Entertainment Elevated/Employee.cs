@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace Entertainment_Elevated
@@ -23,6 +24,10 @@ namespace Entertainment_Elevated
         [DisplayName("Position")]
         public string position { get;  set; }
         
+        public List<Shift> shifts { get; set; }
+
+
+
 
         public Employee() { }
 
@@ -39,6 +44,11 @@ namespace Entertainment_Elevated
             phoneNumber = PhoneNumber;
             email = Email;
             position = Position;
+        }
+
+        public string GetName()
+        {
+            return firstName + " " + lastName;
         }
     }
 }

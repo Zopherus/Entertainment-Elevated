@@ -28,27 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.ScheduleCalendar = new System.Windows.Forms.MonthCalendar();
             this.ScheduleFormPanel = new System.Windows.Forms.Panel();
+            this.ScheduleDataGridView = new System.Windows.Forms.DataGridView();
             this.MenuButton = new System.Windows.Forms.Button();
             this.ScheduleFormPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // monthCalendar1
+            // ScheduleCalendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(18, 18);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 0;
+            this.ScheduleCalendar.Location = new System.Drawing.Point(9, 9);
+            this.ScheduleCalendar.Name = "ScheduleCalendar";
+            this.ScheduleCalendar.TabIndex = 0;
             // 
             // ScheduleFormPanel
             // 
+            this.ScheduleFormPanel.Controls.Add(this.ScheduleDataGridView);
             this.ScheduleFormPanel.Controls.Add(this.MenuButton);
-            this.ScheduleFormPanel.Controls.Add(this.monthCalendar1);
+            this.ScheduleFormPanel.Controls.Add(this.ScheduleCalendar);
             this.ScheduleFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScheduleFormPanel.Location = new System.Drawing.Point(0, 0);
             this.ScheduleFormPanel.Name = "ScheduleFormPanel";
             this.ScheduleFormPanel.Size = new System.Drawing.Size(484, 462);
             this.ScheduleFormPanel.TabIndex = 1;
+            // 
+            // ScheduleDataGridView
+            // 
+            this.ScheduleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScheduleDataGridView.Location = new System.Drawing.Point(0, 188);
+            this.ScheduleDataGridView.Name = "ScheduleDataGridView";
+            this.ScheduleDataGridView.RowHeadersVisible = false;
+            this.ScheduleDataGridView.Size = new System.Drawing.Size(484, 150);
+            this.ScheduleDataGridView.TabIndex = 2;
             // 
             // MenuButton
             // 
@@ -69,14 +81,16 @@
             this.Name = "ScheduleForm";
             this.Text = "ScheduleForm";
             this.ScheduleFormPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar ScheduleCalendar;
         public System.Windows.Forms.Panel ScheduleFormPanel;
         private System.Windows.Forms.Button MenuButton;
+        private System.Windows.Forms.DataGridView ScheduleDataGridView;
     }
 }

@@ -1,2 +1,17 @@
 <?xml version="1.0"?>
-<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <firstName>Eric</firstName>
+    <lastName>Zhu</lastName>
+    <phoneNumber>4254436373</phoneNumber>
+    <email>ejz1999@yahoo.com</email>
+    <position>Manager</position>
+  </Employee>
+  <Employee>
+    <firstName>Jeffrey</firstName>
+    <lastName>Maxwell</lastName>
+    <phoneNumber>4254436373</phoneNumber>
+    <email>jmaxwell@gmail.com</email>
+    <position>Associate</position>
+  </Employee>
+</ArrayOfEmployee>

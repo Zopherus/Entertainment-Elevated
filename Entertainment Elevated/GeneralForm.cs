@@ -22,17 +22,20 @@ namespace Entertainment_Elevated
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Employee>));
 
-            //try
-            //{
-            using (FileStream fileStream = File.OpenRead("Employees.xml"))
+            try
             {
-                if (fileStream.Length == 0)
-                    return;
-                List<Employee> deserializedList = (List<Employee>)serializer.Deserialize(fileStream);
-                EmployeeForm.Employees = deserializedList;
-            } 
-           // }
-            //catch { }
+                using (FileStream fileStream = File.OpenRead("Employees.xml"))
+                {
+                    if (fileStream.Length == 0)
+                        return;
+                    List<Employee> deserializedList = (List<Employee>)serializer.Deserialize(fileStream);
+                    EmployeeForm.Employees = deserializedList;
+                } 
+            }
+            catch
+            {
+                Console.WriteLine("XML Error");
+            }
             
 
         }
@@ -46,6 +49,5 @@ namespace Entertainment_Elevated
                 serializer.Serialize(fileStream, EmployeeForm.Employees);
             }
         }
-
     }
 }

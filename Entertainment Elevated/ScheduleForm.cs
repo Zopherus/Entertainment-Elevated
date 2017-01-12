@@ -15,6 +15,16 @@ namespace Entertainment_Elevated
         public ScheduleForm()
         {
             InitializeComponent();
+            ScheduleDataGridView.Columns.Add("Name", "Name");
+            for (int i = 1; i <= 7; i++)
+            {
+
+            }
+            for (int i = 0; i < EmployeeForm.Employees.Count; i++)
+            {
+                ScheduleDataGridView.Rows.Add();
+                ScheduleDataGridView.Rows[i].Cells[0].Value = EmployeeForm.Employees[i].GetName();
+            }
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
