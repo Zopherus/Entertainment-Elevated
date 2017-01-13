@@ -44,3 +44,17 @@ C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.pdb
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.AddEmployeeForm.resources
 C:\Users\1012746\Desktop\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.AddEmployeeForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\bin\Debug\Entertainment Elevated.exe.config
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.exe
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.pdb
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\bin\Debug\Entertainment Elevated.exe
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\bin\Debug\Entertainment Elevated.pdb
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.csprojResolveAssemblyReference.cache
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.AddEmployeeForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.CustomerForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.EmployeeForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.GeneralForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.MainForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.Properties.Resources.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.ScheduleForm.resources
+C:\Users\1012746\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.csproj.GenerateResource.Cache

@@ -10,45 +10,48 @@ namespace Entertainment_Elevated
     {
         // Set display names for the DataGridView
         [DisplayName("First Name")]
-        public string firstName { get;  set; }
+        public string FirstName { get;  set; }
         
         [DisplayName("Last Name")]
-        public string lastName { get;  set; }
+        public string LastName { get;  set; }
         
         [DisplayName("Phone Number")]
-        public string phoneNumber { get;  set; }
+        public string PhoneNumber { get;  set; }
         
         [DisplayName("Email")]
-        public string email { get;  set; }
+        public string Email { get;  set; }
         
         [DisplayName("Position")]
-        public string position { get;  set; }
+        public string Position { get;  set; }
         
-        public List<Shift> shifts { get; set; }
+        public List<Shift> Shifts { get; set; }
+        
 
-
-
-
-        public Employee() { }
+        public Employee()
+        {
+            Shifts = new List<Shift>();
+        }
 
         public Employee(string FirstName, string LastName)
         {
-            firstName = FirstName;
-            lastName = LastName;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            Shifts = new List<Shift>();
         }
 
         public Employee(string FirstName, string LastName, string PhoneNumber, string Email, string Position)
         {
-            firstName = FirstName;
-            lastName = LastName;
-            phoneNumber = PhoneNumber;
-            email = Email;
-            position = Position;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.Position = Position;
+            Shifts = new List<Shift>();
         }
 
         public string GetName()
         {
-            return firstName + " " + lastName;
+            return FirstName + " " + LastName;
         }
     }
 }

@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleForm));
             this.ScheduleCalendar = new System.Windows.Forms.MonthCalendar();
             this.ScheduleFormPanel = new System.Windows.Forms.Panel();
             this.ScheduleDataGridView = new System.Windows.Forms.DataGridView();
             this.MenuButton = new System.Windows.Forms.Button();
+            this.ReportButton = new System.Windows.Forms.Button();
+            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.ScheduleFormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +50,7 @@
             // 
             // ScheduleFormPanel
             // 
+            this.ScheduleFormPanel.Controls.Add(this.ReportButton);
             this.ScheduleFormPanel.Controls.Add(this.ScheduleDataGridView);
             this.ScheduleFormPanel.Controls.Add(this.MenuButton);
             this.ScheduleFormPanel.Controls.Add(this.ScheduleCalendar);
@@ -76,6 +81,30 @@
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
+            // ReportButton
+            // 
+            this.ReportButton.Location = new System.Drawing.Point(348, 415);
+            this.ReportButton.Name = "ReportButton";
+            this.ReportButton.Size = new System.Drawing.Size(124, 35);
+            this.ReportButton.TabIndex = 3;
+            this.ReportButton.Text = "Generate Weekly Report";
+            this.ReportButton.UseVisualStyleBackColor = true;
+            this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
+            // 
+            // PrintDocument
+            // 
+            this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
+            // 
+            // PrintPreviewDialog
+            // 
+            this.PrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.PrintPreviewDialog.Enabled = true;
+            this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
+            this.PrintPreviewDialog.Name = "PrintPreviewDialog";
+            this.PrintPreviewDialog.Visible = false;
+            // 
             // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,5 +125,8 @@
         public System.Windows.Forms.Panel ScheduleFormPanel;
         private System.Windows.Forms.Button MenuButton;
         private System.Windows.Forms.DataGridView ScheduleDataGridView;
+        private System.Windows.Forms.Button ReportButton;
+        private System.Drawing.Printing.PrintDocument PrintDocument;
+        private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog;
     }
 }

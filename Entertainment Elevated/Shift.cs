@@ -8,15 +8,20 @@ namespace Entertainment_Elevated
 {
     public class Shift
     {
-        public DateTime startTime { get; set; }
-        public DateTime endTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
 
         public Shift() { }
 
         public Shift(DateTime StartTime, DateTime EndTime)
         {
-            startTime = StartTime;
-            endTime = EndTime;
+            this.StartTime = StartTime;
+            this.EndTime = EndTime;
+        }
+
+        public decimal NumberHours()
+        {
+            return EndTime.Subtract(StartTime).Hours;
         }
     }
 }
