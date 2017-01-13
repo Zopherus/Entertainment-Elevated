@@ -39,8 +39,10 @@
             // ScheduleCalendar
             // 
             this.ScheduleCalendar.Location = new System.Drawing.Point(9, 9);
+            this.ScheduleCalendar.MaxSelectionCount = 1;
             this.ScheduleCalendar.Name = "ScheduleCalendar";
             this.ScheduleCalendar.TabIndex = 0;
+            this.ScheduleCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.ScheduleCalendar_DateSelected);
             // 
             // ScheduleFormPanel
             // 
@@ -55,12 +57,14 @@
             // 
             // ScheduleDataGridView
             // 
+            this.ScheduleDataGridView.AllowUserToAddRows = false;
             this.ScheduleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ScheduleDataGridView.Location = new System.Drawing.Point(0, 188);
             this.ScheduleDataGridView.Name = "ScheduleDataGridView";
             this.ScheduleDataGridView.RowHeadersVisible = false;
             this.ScheduleDataGridView.Size = new System.Drawing.Size(484, 150);
             this.ScheduleDataGridView.TabIndex = 2;
+            this.ScheduleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ScheduleDataGridView_CellEndEdit);
             // 
             // MenuButton
             // 
