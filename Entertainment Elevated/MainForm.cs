@@ -51,9 +51,9 @@ namespace Entertainment_Elevated
             general.Controls.Add(customerForm.CustomerFormPanel);
         }
 
-        private void BackButton_Click(object sender, EventArgs e)
+        private void QuitButton_Click(object sender, EventArgs e)
         {
-            Close();
+            QuitButton.FindForm().Close();
         }
     }
 }

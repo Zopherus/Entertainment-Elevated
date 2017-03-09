@@ -6,22 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entertainment_Elevated
 {
-    public class Shift
+    public class Shift : StoreVisit
     {
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public Shift() :base()
+        { }
 
-        public Shift() { }
+        public Shift(DateTime StartTime, DateTime EndTime) : base(StartTime, EndTime)
+        { }
 
-        public Shift(DateTime StartTime, DateTime EndTime)
+        public decimal Pay(decimal payrate)
         {
-            this.StartTime = StartTime;
-            this.EndTime = EndTime;
-        }
-
-        public decimal NumberHours()
-        {
-            return EndTime.Subtract(StartTime).Hours;
+            return NumberHours() * payrate;
         }
     }
 }

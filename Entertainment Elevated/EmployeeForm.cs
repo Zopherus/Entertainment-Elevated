@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entertainment_Elevated
@@ -16,7 +10,19 @@ namespace Entertainment_Elevated
         public EmployeeForm()
         {
             InitializeComponent();
-            EmployeeDataGridView.DataSource = Employees;
+            if (Employees.Count > 0)
+                EmployeeDataGridView.DataSource = Employees;
+            
+            try
+            {
+                EmployeeDataGridView.Columns["FirstName"].DisplayIndex = 0;
+                EmployeeDataGridView.Columns["LastName"].DisplayIndex = 1;
+                EmployeeDataGridView.Columns["Email"].DisplayIndex = 2;
+                EmployeeDataGridView.Columns["PhoneNumber"].DisplayIndex = 3;
+                EmployeeDataGridView.Columns["Payrate"].DisplayIndex = 4;
+                EmployeeDataGridView.Columns["Position"].DisplayIndex = 5;
+            }
+            catch { }
         }
 
         private void MenuButton_Click(object sender, EventArgs e)

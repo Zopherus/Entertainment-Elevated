@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entertainment_Elevated
 {
     public partial class ScheduleForm : Form
     {
+        private decimal hours = 0;
+        private decimal pay = 0;
         public ScheduleForm()
         {
             InitializeComponent();
@@ -25,7 +21,7 @@ namespace Entertainment_Elevated
             for (int i = 0; i < EmployeeForm.Employees.Count; i++)
             {
                 ScheduleDataGridView.Rows.Add();
-                ScheduleDataGridView.Rows[i].Cells[0].Value = EmployeeForm.Employees[i].GetName();
+                ScheduleDataGridView.Rows[i].Cells[0].Value = EmployeeForm.Employees[i].ToString();
 
                 for (int j = 1; j <= 7; j++)
                 {
@@ -88,11 +84,13 @@ namespace Entertainment_Elevated
                 string employeeName = ScheduleDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 foreach (Employee employee in EmployeeForm.Employees)
                 {
-                    if (employee.GetName() == employeeName)
+                    if (employee.ToString() == employeeName)
                     {
                         employee.Shifts.Add(shift);
                     }
                 }
+
+                DisplayShifts();
             }
             catch
             {
@@ -110,6 +108,8 @@ namespace Entertainment_Elevated
                     ScheduleDataGridView.Rows[j].Cells[i].Value = "";
                 }
             }
+            hours = 0;
+            pay = 0;
             foreach (Employee employee in EmployeeForm.Employees)
             {
                 for (int i = 0; i < 7; i++)
@@ -119,9 +119,11 @@ namespace Entertainment_Elevated
                     {
                         if (shift.StartTime.DayOfYear == day.DayOfYear && shift.StartTime.Year == day.Year)
                         {
+                            hours += shift.NumberHours();
+                            pay += shift.Pay(employee.Payrate);
                             foreach (DataGridViewRow row in ScheduleDataGridView.Rows)
                             {
-                                if (row.Cells[0].Value.ToString() == employee.GetName())
+                                if (row.Cells[0].Value.ToString() == employee.ToString())
                                 {
                                     string text = "";
                                     text = shift.StartTime.ToShortTimeString();
@@ -134,67 +136,38 @@ namespace Entertainment_Elevated
                     }
                 }
             }
+            HoursLabel.Text = "Hours: " + hours.ToString();
+            PayLabel.Text = "Pay: " + pay.ToString("C");
         }
 
         private void ReportButton_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = printSchools;
-            printPreviewDialog1.ShowDialog();
+            PrintPreviewDialog.Document = PrintDocument;
+            PrintPreviewDialog.ShowDialog();
         }
 
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            // Print a list of all current courses.
-            Font printFont = new Font("Arial", 10);
-            Font headingFont = new Font("Arial", 14, FontStyle.Bold);
-
-            float verticalPrintPositionFloat = e.MarginBounds.Top;
-            float horizontalPrintPositionFloat = e.MarginBounds.Left;
-
-            float col2 = horizontalPrintPositionFloat + 200;
-            float col3 = col2 + 100;
-
-            float lineHeightFloat = printFont.GetHeight();
-
-            // Print heading.
-            e.Graphics.DrawString("Current School List As of " + DateTime.Now.ToShortDateString(),
-                                  headingFont,
-                                  Brushes.Black,
-                                  horizontalPrintPositionFloat,
-                                  verticalPrintPositionFloat);
-
-            //double spacing between lines of text
-            verticalPrintPositionFloat += 2 * lineHeightFloat;
-
-            // Loop through the list to print all courses.
-            for (int indexInteger = 0; indexInteger < comboBoxSchools.Items.Count; indexInteger++)
-            {
-                e.Graphics.DrawString(comboBoxSchools.Items[indexInteger].ToString(),
-                                      printFont,
-                                      Brushes.Black,
-                                      horizontalPrintPositionFloat,
-                                      verticalPrintPositionFloat);
-                verticalPrintPositionFloat += 2 * lineHeightFloat;
-            }
-
-            // Print heading.
-            e.Graphics.DrawString(textBoxName.Text,
-                                  printFont,
-                                  Brushes.Aquamarine,
-                                  horizontalPrintPositionFloat,
-                                  verticalPrintPositionFloat);
-
-            e.Graphics.DrawString(textBoxName.Text,
-                                  printFont,
-                                  Brushes.Green,
-                                  col2,
-                                  verticalPrintPositionFloat);
-
-            e.Graphics.DrawString(textBoxName.Text,
-                                  printFont,
-                                  Brushes.Red,
-                                  col3,
-                                  verticalPrintPositionFloat);
+            int height = ScheduleDataGridView.Rows.GetRowsHeight(DataGridViewElementStates.None);
+            height += ScheduleDataGridView.ColumnHeadersHeight + 2;
+            int width = ScheduleDataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.None) + 3;
+            ScheduleDataGridView.FindForm().ClientSize = new Size(width, height);
+            ScheduleDataGridView.Dock = DockStyle.Fill;
+            Bitmap bitmap = new Bitmap(ScheduleDataGridView.Width, ScheduleDataGridView.Height);
+            ScheduleDataGridView.DrawToBitmap(bitmap, new Rectangle(0, 0, ScheduleDataGridView.Width, ScheduleDataGridView.Height));
+            ScheduleDataGridView.Dock = DockStyle.Top;
+            ScheduleDataGridView.FindForm().Width = 600;
+            ScheduleDataGridView.FindForm().Height = 500;
+            e.Graphics.DrawImage(bitmap, 0, 0);
+            Font font = new Font("Arial", 14, FontStyle.Bold);
+            float lineHeightFloat = font.GetHeight();
+            float verticalPrintPosition = e.MarginBounds.Top + bitmap.Height;
+            float horizontalPrintPosition = e.MarginBounds.Left;
+            e.Graphics.DrawString("Number of hours: " + hours.ToString(), font, Brushes.Black, 
+                horizontalPrintPosition, verticalPrintPosition);
+            verticalPrintPosition += 2 * lineHeightFloat;
+            e.Graphics.DrawString("Amount of pay: " + pay.ToString("C"), font, Brushes.Black,
+                horizontalPrintPosition, verticalPrintPosition);
         }
     }
 }

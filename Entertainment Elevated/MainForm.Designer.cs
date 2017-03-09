@@ -32,6 +32,7 @@
             this.CustomerButton = new System.Windows.Forms.Button();
             this.ScheduleButton = new System.Windows.Forms.Button();
             this.MainFormPanel = new System.Windows.Forms.Panel();
+            this.QuitButton = new System.Windows.Forms.Button();
             this.MainFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             // 
             this.EmployeeButton.Location = new System.Drawing.Point(3, 3);
             this.EmployeeButton.Name = "EmployeeButton";
-            this.EmployeeButton.Size = new System.Drawing.Size(163, 120);
+            this.EmployeeButton.Size = new System.Drawing.Size(281, 212);
             this.EmployeeButton.TabIndex = 0;
             this.EmployeeButton.Text = "Employees";
             this.EmployeeButton.UseVisualStyleBackColor = true;
@@ -47,9 +48,9 @@
             // 
             // CustomerButton
             // 
-            this.CustomerButton.Location = new System.Drawing.Point(299, 330);
+            this.CustomerButton.Location = new System.Drawing.Point(3, 221);
             this.CustomerButton.Name = "CustomerButton";
-            this.CustomerButton.Size = new System.Drawing.Size(163, 120);
+            this.CustomerButton.Size = new System.Drawing.Size(282, 228);
             this.CustomerButton.TabIndex = 2;
             this.CustomerButton.Text = "Customers";
             this.CustomerButton.UseVisualStyleBackColor = true;
@@ -57,9 +58,9 @@
             // 
             // ScheduleButton
             // 
-            this.ScheduleButton.Location = new System.Drawing.Point(13, 330);
+            this.ScheduleButton.Location = new System.Drawing.Point(291, 3);
             this.ScheduleButton.Name = "ScheduleButton";
-            this.ScheduleButton.Size = new System.Drawing.Size(163, 120);
+            this.ScheduleButton.Size = new System.Drawing.Size(282, 215);
             this.ScheduleButton.TabIndex = 1;
             this.ScheduleButton.Text = "Schedule";
             this.ScheduleButton.UseVisualStyleBackColor = true;
@@ -67,23 +68,34 @@
             // 
             // MainFormPanel
             // 
+            this.MainFormPanel.Controls.Add(this.QuitButton);
             this.MainFormPanel.Controls.Add(this.EmployeeButton);
             this.MainFormPanel.Controls.Add(this.CustomerButton);
             this.MainFormPanel.Controls.Add(this.ScheduleButton);
             this.MainFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainFormPanel.Location = new System.Drawing.Point(0, 0);
             this.MainFormPanel.Name = "MainFormPanel";
-            this.MainFormPanel.Size = new System.Drawing.Size(484, 512);
+            this.MainFormPanel.Size = new System.Drawing.Size(584, 461);
             this.MainFormPanel.TabIndex = 4;
+            // 
+            // QuitButton
+            // 
+            this.QuitButton.Location = new System.Drawing.Point(291, 224);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(282, 228);
+            this.QuitButton.TabIndex = 3;
+            this.QuitButton.Text = "Quit";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 512);
+            this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.MainFormPanel);
             this.Name = "MainForm";
-            this.Text = "Entertainment Elevated";
+            this.Text = " ";
             this.MainFormPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -95,6 +107,7 @@
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Button ScheduleButton;
         public System.Windows.Forms.Panel MainFormPanel;
+        private System.Windows.Forms.Button QuitButton;
     }
 }
 

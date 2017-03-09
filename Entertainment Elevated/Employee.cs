@@ -6,23 +6,15 @@ using System.Xml.Serialization;
 namespace Entertainment_Elevated
 {
     
-    public class Employee
+    public class Employee : Person
     {
         // Set display names for the DataGridView
-        [DisplayName("First Name")]
-        public string FirstName { get;  set; }
-        
-        [DisplayName("Last Name")]
-        public string LastName { get;  set; }
-        
-        [DisplayName("Phone Number")]
-        public string PhoneNumber { get;  set; }
-        
-        [DisplayName("Email")]
-        public string Email { get;  set; }
         
         [DisplayName("Position")]
         public string Position { get;  set; }
+
+        [DisplayName("Payrate")]
+        public decimal Payrate { get; set; }
         
         public List<Shift> Shifts { get; set; }
         
@@ -39,19 +31,15 @@ namespace Entertainment_Elevated
             Shifts = new List<Shift>();
         }
 
-        public Employee(string FirstName, string LastName, string PhoneNumber, string Email, string Position)
+        public Employee(string FirstName, string LastName, string PhoneNumber, string Email, string Position, decimal Payrate)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.PhoneNumber = PhoneNumber;
             this.Email = Email;
             this.Position = Position;
+            this.Payrate = Payrate;
             Shifts = new List<Shift>();
-        }
-
-        public string GetName()
-        {
-            return FirstName + " " + LastName;
         }
     }
 }

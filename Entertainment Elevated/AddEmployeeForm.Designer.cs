@@ -31,14 +31,16 @@
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.PhoneNumberTextBox = new System.Windows.Forms.TextBox();
             this.FirstNameLabel = new System.Windows.Forms.Label();
             this.LastNameLabel = new System.Windows.Forms.Label();
             this.EmailLabel = new System.Windows.Forms.Label();
             this.PhoneNumberLabel = new System.Windows.Forms.Label();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
+            this.PhoneNumberTextBox = new System.Windows.Forms.MaskedTextBox();
             this.PositionComboBox = new System.Windows.Forms.ComboBox();
             this.PositionLabel = new System.Windows.Forms.Label();
+            this.PayrateLabel = new System.Windows.Forms.Label();
+            this.PayrateTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // FirstNameTextBox
@@ -61,13 +63,6 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(166, 20);
             this.EmailTextBox.TabIndex = 2;
-            // 
-            // PhoneNumberTextBox
-            // 
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(96, 90);
-            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
-            this.PhoneNumberTextBox.Size = new System.Drawing.Size(166, 20);
-            this.PhoneNumberTextBox.TabIndex = 3;
             // 
             // FirstNameLabel
             // 
@@ -107,7 +102,7 @@
             // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(30, 167);
+            this.AddEmployeeButton.Location = new System.Drawing.Point(27, 170);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(213, 112);
             this.AddEmployeeButton.TabIndex = 11;
@@ -115,12 +110,21 @@
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
             // 
+            // PhoneNumberTextBox
+            // 
+            this.PhoneNumberTextBox.AsciiOnly = true;
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(97, 91);
+            this.PhoneNumberTextBox.Mask = "(999) 000-0000";
+            this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
+            this.PhoneNumberTextBox.Size = new System.Drawing.Size(165, 20);
+            this.PhoneNumberTextBox.TabIndex = 3;
+            // 
             // PositionComboBox
             // 
             this.PositionComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.PositionComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.PositionComboBox.FormattingEnabled = true;
-            this.PositionComboBox.Location = new System.Drawing.Point(96, 116);
+            this.PositionComboBox.Location = new System.Drawing.Point(96, 143);
             this.PositionComboBox.Name = "PositionComboBox";
             this.PositionComboBox.Size = new System.Drawing.Size(166, 21);
             this.PositionComboBox.TabIndex = 10;
@@ -128,17 +132,36 @@
             // PositionLabel
             // 
             this.PositionLabel.AutoSize = true;
-            this.PositionLabel.Location = new System.Drawing.Point(9, 124);
+            this.PositionLabel.Location = new System.Drawing.Point(9, 151);
             this.PositionLabel.Name = "PositionLabel";
             this.PositionLabel.Size = new System.Drawing.Size(47, 13);
             this.PositionLabel.TabIndex = 12;
             this.PositionLabel.Text = "Position:";
+            // 
+            // PayrateLabel
+            // 
+            this.PayrateLabel.AutoSize = true;
+            this.PayrateLabel.Location = new System.Drawing.Point(9, 124);
+            this.PayrateLabel.Name = "PayrateLabel";
+            this.PayrateLabel.Size = new System.Drawing.Size(46, 13);
+            this.PayrateLabel.TabIndex = 14;
+            this.PayrateLabel.Text = "Payrate:";
+            // 
+            // PayrateTextbox
+            // 
+            this.PayrateTextbox.Location = new System.Drawing.Point(96, 117);
+            this.PayrateTextbox.Name = "PayrateTextbox";
+            this.PayrateTextbox.Size = new System.Drawing.Size(166, 20);
+            this.PayrateTextbox.TabIndex = 4;
             // 
             // AddEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(274, 291);
+            this.Controls.Add(this.PhoneNumberTextBox);
+            this.Controls.Add(this.PayrateTextbox);
+            this.Controls.Add(this.PayrateLabel);
             this.Controls.Add(this.PositionLabel);
             this.Controls.Add(this.PositionComboBox);
             this.Controls.Add(this.AddEmployeeButton);
@@ -146,7 +169,6 @@
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.LastNameLabel);
             this.Controls.Add(this.FirstNameLabel);
-            this.Controls.Add(this.PhoneNumberTextBox);
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.FirstNameTextBox);
@@ -164,13 +186,15 @@
         private System.Windows.Forms.TextBox FirstNameTextBox;
         private System.Windows.Forms.TextBox LastNameTextBox;
         private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.TextBox PhoneNumberTextBox;
         private System.Windows.Forms.Label FirstNameLabel;
         private System.Windows.Forms.Label LastNameLabel;
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label PhoneNumberLabel;
         private System.Windows.Forms.Button AddEmployeeButton;
+        private System.Windows.Forms.MaskedTextBox PhoneNumberTextBox;
         private System.Windows.Forms.ComboBox PositionComboBox;
         private System.Windows.Forms.Label PositionLabel;
+        private System.Windows.Forms.Label PayrateLabel;
+        private System.Windows.Forms.TextBox PayrateTextbox;
     }
 }

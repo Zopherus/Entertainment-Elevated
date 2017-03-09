@@ -45,7 +45,7 @@
             this.EmployeeDataGridView.Location = new System.Drawing.Point(0, 0);
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
             this.EmployeeDataGridView.RowHeadersVisible = false;
-            this.EmployeeDataGridView.Size = new System.Drawing.Size(484, 150);
+            this.EmployeeDataGridView.Size = new System.Drawing.Size(584, 150);
             this.EmployeeDataGridView.TabIndex = 0;
             // 
             // EmployeeFormPanel
@@ -56,14 +56,14 @@
             this.EmployeeFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeFormPanel.Location = new System.Drawing.Point(0, 0);
             this.EmployeeFormPanel.Name = "EmployeeFormPanel";
-            this.EmployeeFormPanel.Size = new System.Drawing.Size(484, 462);
+            this.EmployeeFormPanel.Size = new System.Drawing.Size(584, 461);
             this.EmployeeFormPanel.TabIndex = 1;
             // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(12, 194);
+            this.AddEmployeeButton.Location = new System.Drawing.Point(146, 187);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
-            this.AddEmployeeButton.Size = new System.Drawing.Size(84, 23);
+            this.AddEmployeeButton.Size = new System.Drawing.Size(272, 73);
             this.AddEmployeeButton.TabIndex = 2;
             this.AddEmployeeButton.Text = "Add Employee";
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 462);
+            this.ClientSize = new System.Drawing.Size(584, 461);
             this.Controls.Add(this.EmployeeFormPanel);
             this.Name = "EmployeeForm";
             this.Text = "EmployeeForm";

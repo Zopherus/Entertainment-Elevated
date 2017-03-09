@@ -13,8 +13,8 @@ namespace Entertainment_Elevated
 {
     public partial class AddEmployeeForm : Form
     {
-        private List<string> Positions = new List<string>();
-        DataGridView gridView;
+        public List<string> Positions { get; private set; } = new List<string>();
+        private DataGridView gridView;
         //Pass in the employee datagridview from the employeeForm to refresh it
         public AddEmployeeForm(DataGridView GridView)
         {
@@ -45,16 +45,24 @@ namespace Entertainment_Elevated
             StreamWriter streamWriter = new StreamWriter("Positions.txt");
             foreach(string position in Positions)
             {
-                streamWriter.WriteLine(position);
+                if (position != "")
+                    streamWriter.WriteLine(position);
             }
             streamWriter.Close();
             gridView.DataSource = null;
             gridView.DataSource = EmployeeForm.Employees;
+
+            gridView.Columns["FirstName"].DisplayIndex = 0;
+            gridView.Columns["LastName"].DisplayIndex = 1;
+            gridView.Columns["Email"].DisplayIndex = 2;
+            gridView.Columns["PhoneNumber"].DisplayIndex = 3;
         }
 
         private void AddEmployeeButton_Click(object sender, EventArgs e)
         {
-            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text, EmailTextBox.Text, PositionComboBox.Text);
+            if (!PositionComboBox.Items.Contains(PositionComboBox.Text))
+                Positions.Add(PositionComboBox.Text);
+            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text, EmailTextBox.Text, PositionComboBox.Text, decimal.Parse(PayrateTextbox.Text));
             EmployeeForm.Employees.Add(employee);
             Close();
         }

@@ -21,7 +21,6 @@ namespace Entertainment_Elevated
         private void GeneralForm_Load(object sender, EventArgs e)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Employee>));
-
             try
             {
                 using (FileStream fileStream = File.OpenRead("Employees.xml"))
@@ -30,23 +29,36 @@ namespace Entertainment_Elevated
                         return;
                     List<Employee> deserializedList = (List<Employee>)serializer.Deserialize(fileStream);
                     EmployeeForm.Employees = deserializedList;
-                } 
+                }
+
+                serializer = new XmlSerializer(typeof(List<Customer>));
+                using (FileStream fileStream = File.OpenRead("Customers.xml"))
+                {
+                    if (fileStream.Length == 0)
+                        return;
+                    List<Customer> deserializedList = (List<Customer>)serializer.Deserialize(fileStream);
+                    CustomerForm.Customers = deserializedList;
+                }
             }
             catch
             {
                 Console.WriteLine("XML Error");
             }
-            
-
         }
 
-        // Save the employee data in an XML file
+        // Save the employee and customer data in an XML file
         private void GeneralForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(List<Employee>));
             using (FileStream fileStream = File.OpenWrite("Employees.xml"))
             {
                 serializer.Serialize(fileStream, EmployeeForm.Employees);
+            }
+
+            serializer = new XmlSerializer(typeof(List<Customer>));
+            using (FileStream fileStream = File.OpenWrite("Customers.xml"))
+            {
+                serializer.Serialize(fileStream, CustomerForm.Customers);
             }
         }
     }

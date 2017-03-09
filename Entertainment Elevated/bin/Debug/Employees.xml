@@ -3,71 +3,10 @@
   <Employee>
     <FirstName>Eric</FirstName>
     <LastName>Zhu</LastName>
-    <PhoneNumber>4254436373</PhoneNumber>
     <Email>ejz1999@yahoo.com</Email>
+    <PhoneNumber>(425) 443-6373</PhoneNumber>
     <Position>Manager</Position>
-    <Shifts>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T16:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T17:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T18:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T17:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-14T12:00:00</StartTime>
-        <EndTime>2017-01-14T05:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T17:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-14T12:00:00</StartTime>
-        <EndTime>2017-01-14T05:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T21:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-14T12:00:00</StartTime>
-        <EndTime>2017-01-14T05:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T21:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2017-01-14T12:00:00</StartTime>
-        <EndTime>2017-01-14T05:00:00</EndTime>
-      </Shift>
-      <Shift>
-        <StartTime>2830-08-14T08:00:00</StartTime>
-        <EndTime>2830-08-14T17:00:00</EndTime>
-      </Shift>
-    </Shifts>
-  </Employee>
-  <Employee>
-    <FirstName>Jeffrey</FirstName>
-    <LastName>Maxwell</LastName>
-    <PhoneNumber>42544363453</PhoneNumber>
-    <Email>jmaxwell@gmail.com</Email>
-    <Position>Manager</Position>
-    <Shifts>
-      <Shift>
-        <StartTime>2017-01-13T08:00:00</StartTime>
-        <EndTime>2017-01-13T17:00:00</EndTime>
-      </Shift>
-    </Shifts>
+    <Payrate>10.50</Payrate>
+    <Shifts />
   </Employee>
 </ArrayOfEmployee>
