@@ -2,10 +2,11 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using static Entertainment_Elevated.ChangeFormPanel;
 
 namespace Entertainment_Elevated
 {
-    public partial class CustomerDataForm : Form
+    public partial class CustomerDataForm : Form, IPanelForm
     {
         public CustomerDataForm()
         {
@@ -14,20 +15,12 @@ namespace Entertainment_Elevated
         
         private void CustomerButton_Click(object sender, EventArgs e)
         {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            CustomerForm customerForm = new CustomerForm();
-            general.Controls.Clear();
-            general.Controls.Add(customerForm.CustomerFormPanel);
+            ChangeFormPanels<CustomerForm>(sender);
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            MainForm mainForm = new MainForm();
-            general.Controls.Clear();
-            general.Controls.Add(mainForm.MainFormPanel);
+            ChangeFormPanels<MainForm>(sender);
         }
 
         private void DataPictureBox_Paint(object sender, PaintEventArgs e)
@@ -76,6 +69,11 @@ namespace Entertainment_Elevated
 
             graphics.ResetTransform();
             graphics.DrawRectangle(Pens.Black, 0, 0, width - 1, height - 1);
+        }
+
+        public Panel Panel()
+        {
+            return CustomerDataFormPanel;
         }
     }
 }

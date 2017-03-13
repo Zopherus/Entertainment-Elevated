@@ -41,7 +41,9 @@ namespace Entertainment_Elevated
                 }
             }
             catch
-            { }
+            {
+                Console.WriteLine("Error in position text file");
+            }
             
             // Add all of the positions into the corresponding ComboBox
             PositionComboBox.Items.AddRange(Positions.ToArray());

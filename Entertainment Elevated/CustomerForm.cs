@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using static Entertainment_Elevated.ChangeFormPanel;
 
 namespace Entertainment_Elevated
 {
-    public partial class CustomerForm : Form
+    public partial class CustomerForm : Form, IPanelForm
     {
         // Is a consideration to use a hash table here, especially if the customer list becomes larger and larger
         // But hashing the names of the customers does not allow searching for part of a customer's name
@@ -78,20 +79,17 @@ namespace Entertainment_Elevated
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            MainForm mainForm = new MainForm();
-            general.Controls.Clear();
-            general.Controls.Add(mainForm.MainFormPanel);
+            ChangeFormPanels<MainForm>(sender);
         }
 
         private void CustomerData_Click(object sender, EventArgs e)
         {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            CustomerDataForm customerDataForm = new CustomerDataForm();
-            general.Controls.Clear();
-            general.Controls.Add(customerDataForm.CustomerDataFormPanel);
+            ChangeFormPanels<CustomerDataForm>(sender);
+        }
+
+        public Panel Panel()
+        {
+            return CustomerFormPanel;
         }
     }
 }

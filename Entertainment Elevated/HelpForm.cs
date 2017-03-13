@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using static Entertainment_Elevated.ChangeFormPanel;
 
 namespace Entertainment_Elevated
 {
-    public partial class HelpForm : Form
+    public partial class HelpForm : Form, IPanelForm
     {
         public HelpForm()
         {
@@ -12,11 +13,13 @@ namespace Entertainment_Elevated
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            MainForm mainForm = new MainForm();
-            general.Controls.Clear();
-            general.Controls.Add(mainForm.MainFormPanel);
+            ChangeFormPanels<MainForm>(sender);
+        }
+
+        // To satisfy the IPanelForm interface requirement
+        public Panel Panel()
+        {
+            return HelpFormPanel;
         }
     }
 }

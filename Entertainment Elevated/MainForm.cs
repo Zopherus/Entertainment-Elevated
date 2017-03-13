@@ -1,21 +1,57 @@
 ﻿using System;
 using System.Windows.Forms;
+using static Entertainment_Elevated.ChangeFormPanel;
 
 namespace Entertainment_Elevated
 {
-    public partial class MainForm : Form
+    public partial class MainForm : Form, IPanelForm
     {
         public MainForm()
         {
             InitializeComponent();
         }
-
-        // The following four methods are essentially the same
-        // All of them use the panel control to switch between pages
-        // Easier on the user as there is only one window, not multiple
+       
         private void EmployeeButton_Click(object sender, EventArgs e)
         {
-            // Because this method runs when the button is clicked
+            ChangeFormPanels<EmployeeForm>(sender);
+        }
+
+        private void ScheduleButton_Click(object sender, EventArgs e)
+        {
+            ChangeFormPanels<ScheduleForm>(sender);
+        }
+
+        private void CustomerButton_Click(object sender, EventArgs e)
+        {
+            ChangeFormPanels<CustomerForm>(sender);
+        }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            ChangeFormPanels<HelpForm>(sender);
+        }
+
+        // To satisfy the IPanelForm interface requirement
+        public Panel Panel()
+        {
+            return MainFormPanel;
+        }
+    }
+
+    public static class ChangeFormPanel
+    {
+        // This method is what allows the program to switch between different panels
+        // Easier on the user as there is only one window, not multiple windows
+        // This method is also used in many different files to switch between panels
+
+        // This method takes in an object sender, which is used to find the form
+        // This will always be a button that is clicked
+
+         // The use of a generic method allows all the different types of forms with panels to be generalized
+         // This type, T, must inherit from the two classes listed below as well as have an empty constructor
+        public static void ChangeFormPanels<T>(object sender)
+            where T : Form, IPanelForm, new()
+        {
             // The button is the sender, so this Control will be the button
             Control obj = (Control)sender;
 
@@ -24,40 +60,13 @@ namespace Entertainment_Elevated
             GeneralForm general = (GeneralForm)obj.FindForm();
 
             // A form of our wanted screen is created
-            EmployeeForm employeeForm = new EmployeeForm();
+            T form = new T();
 
             // All the controls on the GeneralForm are cleared so that the new controls can be added
             general.Controls.Clear();
 
             // Add the wanted panel onto the GeneralForm to display it
-            general.Controls.Add(employeeForm.EmployeeFormPanel);
-        }
-
-        private void ScheduleButton_Click(object sender, EventArgs e)
-        {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            ScheduleForm scheduleForm = new ScheduleForm();
-            general.Controls.Clear();
-            general.Controls.Add(scheduleForm.ScheduleFormPanel);
-        }
-
-        private void CustomerButton_Click(object sender, EventArgs e)
-        {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            CustomerForm customerForm = new CustomerForm();
-            general.Controls.Clear();
-            general.Controls.Add(customerForm.CustomerFormPanel);
-        }
-
-        private void HelpButton_Click(object sender, EventArgs e)
-        {
-            Control obj = (Control)sender;
-            GeneralForm general = (GeneralForm)obj.FindForm();
-            HelpForm helpForm = new HelpForm();
-            general.Controls.Clear();
-            general.Controls.Add(helpForm.HelpFormPanel);
+            general.Controls.Add(form.Panel());
         }
     }
 }

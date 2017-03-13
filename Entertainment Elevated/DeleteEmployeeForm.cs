@@ -7,6 +7,7 @@ namespace Entertainment_Elevated
     {
         private DataGridView gridView;
 
+        // Pass in the GridView to refresh it
         public DeleteEmployeeForm(DataGridView GridView)
         {
             InitializeComponent();
@@ -16,7 +17,15 @@ namespace Entertainment_Elevated
 
         private void DeleteEmployeesButton_Click(object sender, EventArgs e)
         {
-            foreach(Employee employee in EmployeeListBox.SelectedItems)
+            // Show a warning before deleting the employees
+            DialogResult result = MessageBox.Show("Are you sure you want to delete these employees?", "Caution", MessageBoxButtons.YesNo);
+
+            // Do not delete the employees if the user is not sure
+            if (result == DialogResult.No)
+                return;
+
+            // If the employee was selected, delete them
+            foreach (Employee employee in EmployeeListBox.SelectedItems)
             {
                 EmployeeForm.Employees.Remove(employee);
             }
