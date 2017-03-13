@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -32,7 +33,7 @@
             this.CustomerButton = new System.Windows.Forms.Button();
             this.ScheduleButton = new System.Windows.Forms.Button();
             this.MainFormPanel = new System.Windows.Forms.Panel();
-            this.QuitButton = new System.Windows.Forms.Button();
+            this.HelpButton = new System.Windows.Forms.Button();
             this.MainFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             // 
             // MainFormPanel
             // 
-            this.MainFormPanel.Controls.Add(this.QuitButton);
+            this.MainFormPanel.Controls.Add(this.HelpButton);
             this.MainFormPanel.Controls.Add(this.EmployeeButton);
             this.MainFormPanel.Controls.Add(this.CustomerButton);
             this.MainFormPanel.Controls.Add(this.ScheduleButton);
@@ -78,15 +79,15 @@
             this.MainFormPanel.Size = new System.Drawing.Size(584, 461);
             this.MainFormPanel.TabIndex = 4;
             // 
-            // QuitButton
+            // HelpButton
             // 
-            this.QuitButton.Location = new System.Drawing.Point(291, 224);
-            this.QuitButton.Name = "QuitButton";
-            this.QuitButton.Size = new System.Drawing.Size(282, 228);
-            this.QuitButton.TabIndex = 3;
-            this.QuitButton.Text = "Quit";
-            this.QuitButton.UseVisualStyleBackColor = true;
-            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            this.HelpButton.Location = new System.Drawing.Point(291, 224);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(282, 228);
+            this.HelpButton.TabIndex = 3;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // MainForm
             // 
@@ -107,7 +108,6 @@
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Button ScheduleButton;
         public System.Windows.Forms.Panel MainFormPanel;
-        private System.Windows.Forms.Button QuitButton;
+        private System.Windows.Forms.Button HelpButton;
     }
 }
-

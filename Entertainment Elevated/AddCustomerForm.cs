@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entertainment_Elevated
@@ -19,14 +12,20 @@ namespace Entertainment_Elevated
 
         private void AddCustomerButton_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text, EmailTextBox.Text);
-            CustomerForm.Customers.Add(customer);
+            try
+            {
+                // Create a new customer object and add it to the Customers list
+                Customer customer = new Customer(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text, EmailTextBox.Text);
+                CustomerForm.Customers.Add(customer);
+            }
+            catch
+            {
+                // Throw an error and display a popup box if user enters erroneous information
+                MessageBox.Show("Please check entered data.");
+                return;
+            }
+
             Close();
-        }
-
-        private void AddCustomerForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
         }
     }
 }

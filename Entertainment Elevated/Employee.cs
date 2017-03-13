@@ -5,11 +5,10 @@ using System.Xml.Serialization;
 
 namespace Entertainment_Elevated
 {
-    
+    // Inherit from the Person subclass
     public class Employee : Person
     {
-        // Set display names for the DataGridView
-        
+        // Set the correct headings for these properties in the GridVieW
         [DisplayName("Position")]
         public string Position { get;  set; }
 
@@ -18,25 +17,21 @@ namespace Entertainment_Elevated
         
         public List<Shift> Shifts { get; set; }
         
-
-        public Employee()
+        // Inherit the empty constructor from the base, but also initialize the shift list
+        public Employee() : base()
         {
             Shifts = new List<Shift>();
         }
 
-        public Employee(string FirstName, string LastName)
+        public Employee(string FirstName, string LastName) : base(FirstName, LastName)
         {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
             Shifts = new List<Shift>();
         }
 
-        public Employee(string FirstName, string LastName, string PhoneNumber, string Email, string Position, decimal Payrate)
+        // Inherit from the base constructor, but add on the properties of position and payrate special to this class
+        public Employee(string FirstName, string LastName, string PhoneNumber, string Email, string Position, decimal Payrate) 
+            : base(FirstName, LastName, Email, PhoneNumber)
         {
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.PhoneNumber = PhoneNumber;
-            this.Email = Email;
             this.Position = Position;
             this.Payrate = Payrate;
             Shifts = new List<Shift>();

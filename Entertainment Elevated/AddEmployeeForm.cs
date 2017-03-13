@@ -1,57 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Entertainment_Elevated
 {
     public partial class AddEmployeeForm : Form
     {
+        // The list of different positions that an employee can have
         public List<string> Positions { get; private set; } = new List<string>();
+
         private DataGridView gridView;
-        //Pass in the employee datagridview from the employeeForm to refresh it
+
+        // Pass in the employee datagridview from the employeeForm to refresh it
         public AddEmployeeForm(DataGridView GridView)
         {
             InitializeComponent();
-            gridView = GridView;
-        } 
 
+            // Create a reference gridView in this class to the GridView from the employeeForm
+            // To be able to refresh the one in the other form
+            gridView = GridView;
+        }
+
+        // Occurs when the form is opened
         private void AddEmployeeForm_Load(object sender, EventArgs e)
         {
             try
             {
-                StreamReader streamReader = new StreamReader("Positions.txt");
-                string line = streamReader.ReadLine();
-                while (line != null)
+                // Read the text file with the positions in it and put it into the Positions list
+                using (StreamReader streamReader = new StreamReader("Positions.txt"))
                 {
-                    Positions.Add(line);
-                    line = streamReader.ReadLine();
+                    string line = streamReader.ReadLine();
+
+                    // While there are still more lines, continue reading
+                    while (line != null)
+                    {
+                        Positions.Add(line);
+                        line = streamReader.ReadLine();
+                    }
                 }
-                streamReader.Close();
             }
             catch
             { }
+            
+            // Add all of the positions into the corresponding ComboBox
             PositionComboBox.Items.AddRange(Positions.ToArray());
         }
 
         private void AddEmployeeForm_FormClosed(object sender, EventArgs e)
         {
-            StreamWriter streamWriter = new StreamWriter("Positions.txt");
-            foreach(string position in Positions)
+            // Save all of the positions in the text file
+            using (StreamWriter streamWriter = new StreamWriter("Positions.txt"))
             {
-                if (position != "")
-                    streamWriter.WriteLine(position);
+                foreach (string position in Positions)
+                {
+                    if (position != "")
+                        streamWriter.WriteLine(position);
+                }
             }
-            streamWriter.Close();
+
+            // Reset the data source of the GridView to be able to force it to refresh the data within the table
             gridView.DataSource = null;
             gridView.DataSource = EmployeeForm.Employees;
 
+            // Reset the order of the columns of the GridView
             gridView.Columns["FirstName"].DisplayIndex = 0;
             gridView.Columns["LastName"].DisplayIndex = 1;
             gridView.Columns["Email"].DisplayIndex = 2;
@@ -60,10 +72,23 @@ namespace Entertainment_Elevated
 
         private void AddEmployeeButton_Click(object sender, EventArgs e)
         {
+            // If the user typed their own position into the box, then add it to the list of positions
             if (!PositionComboBox.Items.Contains(PositionComboBox.Text))
                 Positions.Add(PositionComboBox.Text);
-            Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text, EmailTextBox.Text, PositionComboBox.Text, decimal.Parse(PayrateTextbox.Text));
-            EmployeeForm.Employees.Add(employee);
+            try
+            {
+                // Create an employee object and add it to the Employee list
+                Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text,
+                    EmailTextBox.Text, PositionComboBox.Text, decimal.Parse(PayrateTextbox.Text));
+                EmployeeForm.Employees.Add(employee);
+            }
+            catch
+            {
+                // Throw an error and display a popup box if user enters erroneous information
+                MessageBox.Show("Please check entered data.");
+                return;
+            }
+
             Close();
         }
     }

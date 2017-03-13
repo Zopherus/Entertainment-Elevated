@@ -1,23 +1,2 @@
 <?xml version="1.0"?>
-<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Customer>
-    <FirstName>asdf</FirstName>
-    <LastName>sdf</LastName>
-    <Email>(112) 312-3123</Email>
-    <PhoneNumber>asdf</PhoneNumber>
-    <StoreVisits>
-      <StoreVisit>
-        <StartTime>2017-02-27T21:16:37.4229413-08:00</StartTime>
-        <EndTime>0001-01-01T00:00:00</EndTime>
-      </StoreVisit>
-      <StoreVisit>
-        <StartTime>2017-02-27T21:16:37.6629256-08:00</StartTime>
-        <EndTime>0001-01-01T00:00:00</EndTime>
-      </StoreVisit>
-      <StoreVisit>
-        <StartTime>2017-02-27T21:16:37.8464994-08:00</StartTime>
-        <EndTime>0001-01-01T00:00:00</EndTime>
-      </StoreVisit>
-    </StoreVisits>
-  </Customer>
-</ArrayOfCustomer>
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />

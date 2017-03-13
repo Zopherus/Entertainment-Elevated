@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -31,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleForm));
             this.ScheduleCalendar = new System.Windows.Forms.MonthCalendar();
             this.ScheduleFormPanel = new System.Windows.Forms.Panel();
+            this.PayLabel = new System.Windows.Forms.Label();
+            this.HoursLabel = new System.Windows.Forms.Label();
             this.ReportButton = new System.Windows.Forms.Button();
             this.ScheduleDataGridView = new System.Windows.Forms.DataGridView();
             this.MenuButton = new System.Windows.Forms.Button();
             this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-            this.HoursLabel = new System.Windows.Forms.Label();
-            this.PayLabel = new System.Windows.Forms.Label();
             this.ScheduleFormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -64,12 +65,30 @@
             this.ScheduleFormPanel.Size = new System.Drawing.Size(584, 461);
             this.ScheduleFormPanel.TabIndex = 1;
             // 
+            // PayLabel
+            // 
+            this.PayLabel.AutoSize = true;
+            this.PayLabel.Location = new System.Drawing.Point(399, 175);
+            this.PayLabel.Name = "PayLabel";
+            this.PayLabel.Size = new System.Drawing.Size(64, 13);
+            this.PayLabel.TabIndex = 5;
+            this.PayLabel.Text = "Total Pay: 0";
+            // 
+            // HoursLabel
+            // 
+            this.HoursLabel.AutoSize = true;
+            this.HoursLabel.Location = new System.Drawing.Point(58, 175);
+            this.HoursLabel.Name = "HoursLabel";
+            this.HoursLabel.Size = new System.Drawing.Size(47, 13);
+            this.HoursLabel.TabIndex = 4;
+            this.HoursLabel.Text = "Hours: 0";
+            // 
             // ReportButton
             // 
             this.ReportButton.Location = new System.Drawing.Point(432, 246);
             this.ReportButton.Name = "ReportButton";
             this.ReportButton.Size = new System.Drawing.Size(120, 35);
-            this.ReportButton.TabIndex = 3;
+            this.ReportButton.TabIndex = 1;
             this.ReportButton.Text = "Print Weekly Report";
             this.ReportButton.UseVisualStyleBackColor = true;
             this.ReportButton.Click += new System.EventHandler(this.ReportButton_Click);
@@ -84,7 +103,7 @@
             this.ScheduleDataGridView.Name = "ScheduleDataGridView";
             this.ScheduleDataGridView.RowHeadersVisible = false;
             this.ScheduleDataGridView.Size = new System.Drawing.Size(584, 150);
-            this.ScheduleDataGridView.TabIndex = 2;
+            this.ScheduleDataGridView.TabIndex = 4;
             this.ScheduleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.ScheduleDataGridView_CellEndEdit);
             // 
             // MenuButton
@@ -92,7 +111,7 @@
             this.MenuButton.Location = new System.Drawing.Point(12, 426);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(75, 23);
-            this.MenuButton.TabIndex = 1;
+            this.MenuButton.TabIndex = 2;
             this.MenuButton.Text = "Menu";
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
@@ -110,24 +129,6 @@
             this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
             this.PrintPreviewDialog.Name = "PrintPreviewDialog";
             this.PrintPreviewDialog.Visible = false;
-            // 
-            // HoursLabel
-            // 
-            this.HoursLabel.AutoSize = true;
-            this.HoursLabel.Location = new System.Drawing.Point(58, 175);
-            this.HoursLabel.Name = "HoursLabel";
-            this.HoursLabel.Size = new System.Drawing.Size(47, 13);
-            this.HoursLabel.TabIndex = 4;
-            this.HoursLabel.Text = "Hours: 0";
-            // 
-            // PayLabel
-            // 
-            this.PayLabel.AutoSize = true;
-            this.PayLabel.Location = new System.Drawing.Point(399, 175);
-            this.PayLabel.Name = "PayLabel";
-            this.PayLabel.Size = new System.Drawing.Size(64, 13);
-            this.PayLabel.TabIndex = 5;
-            this.PayLabel.Text = "Total Pay: 0";
             // 
             // ScheduleForm
             // 

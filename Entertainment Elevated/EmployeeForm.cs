@@ -7,12 +7,12 @@ namespace Entertainment_Elevated
     public partial class EmployeeForm : Form
     {
         public static List<Employee> Employees = new List<Employee>();
+
         public EmployeeForm()
         {
             InitializeComponent();
             if (Employees.Count > 0)
                 EmployeeDataGridView.DataSource = Employees;
-            
             try
             {
                 EmployeeDataGridView.Columns["FirstName"].DisplayIndex = 0;
@@ -23,13 +23,17 @@ namespace Entertainment_Elevated
                 EmployeeDataGridView.Columns["Position"].DisplayIndex = 5;
             }
             catch { }
+
+            foreach(DataGridViewColumn column in EmployeeDataGridView.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.Automatic;
+            }
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
             Control obj = (Control)sender;
-            Form form = obj.FindForm();
-            GeneralForm general = (GeneralForm)form;
+            GeneralForm general = (GeneralForm)obj.FindForm();
             MainForm mainForm = new MainForm();
             general.Controls.Clear();
             general.Controls.Add(mainForm.MainFormPanel);
@@ -39,6 +43,12 @@ namespace Entertainment_Elevated
         {
             AddEmployeeForm addEmployeeForm = new AddEmployeeForm(EmployeeDataGridView);
             addEmployeeForm.ShowDialog();
+        }
+
+        private void DeleteEmployeeButton_Click(object sender, EventArgs e)
+        {
+            DeleteEmployeeForm deleteEmployeeForm = new DeleteEmployeeForm(EmployeeDataGridView);
+            deleteEmployeeForm.ShowDialog();
         }
     }
 }

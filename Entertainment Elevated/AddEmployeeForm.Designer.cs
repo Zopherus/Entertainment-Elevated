@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -28,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FirstNameTextBox = new System.Windows.Forms.TextBox();
             this.LastNameTextBox = new System.Windows.Forms.TextBox();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
@@ -41,6 +43,7 @@
             this.PositionLabel = new System.Windows.Forms.Label();
             this.PayrateLabel = new System.Windows.Forms.Label();
             this.PayrateTextbox = new System.Windows.Forms.TextBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // FirstNameTextBox
@@ -128,6 +131,7 @@
             this.PositionComboBox.Name = "PositionComboBox";
             this.PositionComboBox.Size = new System.Drawing.Size(166, 21);
             this.PositionComboBox.TabIndex = 10;
+            this.toolTip.SetToolTip(this.PositionComboBox, "Type in a new position or find the correct one in the list");
             // 
             // PositionLabel
             // 
@@ -196,5 +200,6 @@
         private System.Windows.Forms.Label PositionLabel;
         private System.Windows.Forms.Label PayrateLabel;
         private System.Windows.Forms.TextBox PayrateTextbox;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

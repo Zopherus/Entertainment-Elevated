@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Entertainment_Elevated
@@ -10,27 +9,19 @@ namespace Entertainment_Elevated
     {
         // Is a consideration to use a hash table here, especially if the customer list becomes larger and larger
         // But hashing the names of the customers does not allow searching for part of a customer's name
+        // Best compromise is to use a sorted alphabetically list for logarithmic search time
         public static List<Customer> Customers = new List<Customer>();
 
         public CustomerForm()
         {
             InitializeComponent();
-            foreach(Customer customer in Customers)
+            foreach (Customer customer in Customers)
             {
                 CustomerListBox.Items.Add(customer);
             }
         }
 
-
-        private void MenuButton_Click(object sender, EventArgs e)
-        {
-            Control obj = (Control)sender;
-            Form form = obj.FindForm();
-            GeneralForm general = (GeneralForm)form;
-            MainForm mainForm = new MainForm();
-            general.Controls.Clear();
-            general.Controls.Add(mainForm.MainFormPanel);
-        }
+        
 
         private void SearchTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -58,7 +49,7 @@ namespace Entertainment_Elevated
             foreach (Customer customer in Customers)
             {
                 e.Graphics.DrawString(customer.ToString() + ": " + customer.StoreVisits.Count.ToString(), font, Brushes.Black,
-                    horizontalPrintPosition, verticalPrintPosition);
+                        horizontalPrintPosition, verticalPrintPosition);
                 verticalPrintPosition += 2 * lineHeightFloat;
             }
         }
@@ -85,11 +76,19 @@ namespace Entertainment_Elevated
             }
         }
 
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            Control obj = (Control)sender;
+            GeneralForm general = (GeneralForm)obj.FindForm();
+            MainForm mainForm = new MainForm();
+            general.Controls.Clear();
+            general.Controls.Add(mainForm.MainFormPanel);
+        }
+
         private void CustomerData_Click(object sender, EventArgs e)
         {
             Control obj = (Control)sender;
-            Form form = obj.FindForm();
-            GeneralForm general = (GeneralForm)form;
+            GeneralForm general = (GeneralForm)obj.FindForm();
             CustomerDataForm customerDataForm = new CustomerDataForm();
             general.Controls.Clear();
             general.Controls.Add(customerDataForm.CustomerDataFormPanel);

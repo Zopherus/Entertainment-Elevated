@@ -2,8 +2,10 @@
 
 namespace Entertainment_Elevated
 {
+    // Base class for both Customer and Employee classes
     public class Person
     {
+        // Set the correct headings for these properties in the GridView
         [DisplayName("First Name")]
         public string FirstName { get; set; }
 
@@ -16,8 +18,7 @@ namespace Entertainment_Elevated
         [DisplayName("Phone Number")]
         public string PhoneNumber { get; set; }
 
-        
-
+        // Empty Constructor
         public Person() { }
 
         public Person(string FirstName, string LastName)
@@ -34,6 +35,7 @@ namespace Entertainment_Elevated
             this.PhoneNumber = PhoneNumber;
         }
 
+        // Override the standard ToString method to output the full name of the person
         public override string ToString()
         {
             return FirstName + " " + LastName;

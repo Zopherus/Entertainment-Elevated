@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -131,7 +132,6 @@
             this.Controls.Add(this.FirstNameTextBox);
             this.Name = "AddCustomerForm";
             this.Text = "Add Customer";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddCustomerForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

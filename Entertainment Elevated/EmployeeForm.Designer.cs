@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -32,6 +33,7 @@
             this.EmployeeFormPanel = new System.Windows.Forms.Panel();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
             this.MenuButton = new System.Windows.Forms.Button();
+            this.DeleteEmployeeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeDataGridView)).BeginInit();
             this.EmployeeFormPanel.SuspendLayout();
             this.SuspendLayout();
@@ -45,11 +47,13 @@
             this.EmployeeDataGridView.Location = new System.Drawing.Point(0, 0);
             this.EmployeeDataGridView.Name = "EmployeeDataGridView";
             this.EmployeeDataGridView.RowHeadersVisible = false;
+            this.EmployeeDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.EmployeeDataGridView.Size = new System.Drawing.Size(584, 150);
             this.EmployeeDataGridView.TabIndex = 0;
             // 
             // EmployeeFormPanel
             // 
+            this.EmployeeFormPanel.Controls.Add(this.DeleteEmployeeButton);
             this.EmployeeFormPanel.Controls.Add(this.AddEmployeeButton);
             this.EmployeeFormPanel.Controls.Add(this.MenuButton);
             this.EmployeeFormPanel.Controls.Add(this.EmployeeDataGridView);
@@ -64,7 +68,7 @@
             this.AddEmployeeButton.Location = new System.Drawing.Point(146, 187);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(272, 73);
-            this.AddEmployeeButton.TabIndex = 2;
+            this.AddEmployeeButton.TabIndex = 1;
             this.AddEmployeeButton.Text = "Add Employee";
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
@@ -74,10 +78,20 @@
             this.MenuButton.Location = new System.Drawing.Point(12, 427);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(75, 23);
-            this.MenuButton.TabIndex = 1;
+            this.MenuButton.TabIndex = 3;
             this.MenuButton.Text = "Menu";
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // DeleteEmployeeButton
+            // 
+            this.DeleteEmployeeButton.Location = new System.Drawing.Point(146, 277);
+            this.DeleteEmployeeButton.Name = "DeleteEmployeeButton";
+            this.DeleteEmployeeButton.Size = new System.Drawing.Size(272, 73);
+            this.DeleteEmployeeButton.TabIndex = 2;
+            this.DeleteEmployeeButton.Text = "Delete Employee";
+            this.DeleteEmployeeButton.UseVisualStyleBackColor = true;
+            this.DeleteEmployeeButton.Click += new System.EventHandler(this.DeleteEmployeeButton_Click);
             // 
             // EmployeeForm
             // 
@@ -98,5 +112,6 @@
         private System.Windows.Forms.Button MenuButton;
         private System.Windows.Forms.Button AddEmployeeButton;
         public System.Windows.Forms.DataGridView EmployeeDataGridView;
+        private System.Windows.Forms.Button DeleteEmployeeButton;
     }
 }

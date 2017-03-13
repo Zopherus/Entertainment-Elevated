@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Entertainment_Elevated
@@ -49,12 +48,14 @@ namespace Entertainment_Elevated
         // Save the employee and customer data in an XML file
         private void GeneralForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            System.IO.File.WriteAllText("Employees.xml", string.Empty);
             XmlSerializer serializer = new XmlSerializer(typeof(List<Employee>));
             using (FileStream fileStream = File.OpenWrite("Employees.xml"))
             {
                 serializer.Serialize(fileStream, EmployeeForm.Employees);
             }
 
+            System.IO.File.WriteAllText("Customers.xml", string.Empty);
             serializer = new XmlSerializer(typeof(List<Customer>));
             using (FileStream fileStream = File.OpenWrite("Customers.xml"))
             {

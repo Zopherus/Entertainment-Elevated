@@ -9,6 +9,7 @@ namespace Entertainment_Elevated
     {
         private decimal hours = 0;
         private decimal pay = 0;
+
         public ScheduleForm()
         {
             InitializeComponent();
@@ -18,6 +19,7 @@ namespace Entertainment_Elevated
             {
                 ScheduleDataGridView.Columns.Add(today.AddDays(i).ToShortDateString(), today.AddDays(i).ToShortDateString());
             }
+
             for (int i = 0; i < EmployeeForm.Employees.Count; i++)
             {
                 ScheduleDataGridView.Rows.Add();
@@ -28,14 +30,14 @@ namespace Entertainment_Elevated
                     ScheduleDataGridView.Rows[i].Cells[j].ToolTipText = "eg:  9:00 AM-5:00 PM";
                 }
             }
+
             DisplayShifts();
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
             Control obj = (Control)sender;
-            Form form = obj.FindForm();
-            GeneralForm general = (GeneralForm)form;
+            GeneralForm general = (GeneralForm)obj.FindForm();
             MainForm mainForm = new MainForm();
             general.Controls.Clear();
             general.Controls.Add(mainForm.MainFormPanel);
@@ -48,6 +50,7 @@ namespace Entertainment_Elevated
                 ScheduleDataGridView.Columns[i].Name = ScheduleCalendar.SelectionStart.AddDays(i - 1).ToShortDateString();
                 ScheduleDataGridView.Columns[i].HeaderText = ScheduleCalendar.SelectionStart.AddDays(i - 1).ToShortDateString();
             }
+
             DisplayShifts();
         }
 
@@ -69,11 +72,10 @@ namespace Entertainment_Elevated
                 // Split the text at the hyphen
                 string[] times = text.Split('-');
 
-                //Find the number of hours from the start of the day that the shift starts and ends
+                // Find the number of hours from the start of the day that the shift starts and ends
                 int startHours = DateTime.Parse(times[0]).Hour;
 
                 int endHours = DateTime.Parse(times[1]).Hour;
-
 
                 // Create new DateTimes for the starting and ending of the shift and create the shift
                 DateTime start = new DateTime(day.Year, day.Month, day.Day, startHours, 0, 0);
@@ -84,14 +86,22 @@ namespace Entertainment_Elevated
                 string employeeName = ScheduleDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
                 foreach (Employee employee in EmployeeForm.Employees)
                 {
+                    // Unfortunately, using employee names to compare employees could cause problems
+                    // If there are two employees with the exact same names
+                    // However, this will be extremely rare and the workaround to this problem would be complex
                     if (employee.ToString() == employeeName)
                     {
+                        // Add the shift to the employee
                         employee.Shifts.Add(shift);
+                        return;
                     }
                 }
 
+                // Update the shifts
                 DisplayShifts();
             }
+
+            // Throw an error and display a popup box if user enters erroneous information
             catch
             {
                 MessageBox.Show("Please check the entered text.");
@@ -108,27 +118,45 @@ namespace Entertainment_Elevated
                     ScheduleDataGridView.Rows[j].Cells[i].Value = "";
                 }
             }
+
+            // Reset the hours and pay to recalculate them 
             hours = 0;
             pay = 0;
+
+            // This loop runs in at least cubic worse case time with respect to the number of employees
+            // Although this could cause problems if the number of employees or shifts grows large
+            // It is highly unlikely for these to be high enough for this loop to cause lag
+            
+            // Loop through all of the employees
             foreach (Employee employee in EmployeeForm.Employees)
             {
+                // Loop through each day
                 for (int i = 0; i < 7; i++)
                 {
                     DateTime day = ScheduleCalendar.SelectionStart.AddDays(i);
+
+                    // Loop through the shifts
                     foreach (Shift shift in employee.Shifts)
                     {
+                        // See if they match up with the current day
                         if (shift.StartTime.DayOfYear == day.DayOfYear && shift.StartTime.Year == day.Year)
                         {
+                            // Add to the hours and pay
                             hours += shift.NumberHours();
                             pay += shift.Pay(employee.Payrate);
+
+                            // Loop through the rows of the grid to add the shift onto the GridView
                             foreach (DataGridViewRow row in ScheduleDataGridView.Rows)
                             {
+                                // Checking for correct employee
                                 if (row.Cells[0].Value.ToString() == employee.ToString())
                                 {
                                     string text = "";
                                     text = shift.StartTime.ToShortTimeString();
                                     text += "-";
                                     text += shift.EndTime.ToShortTimeString();
+
+                                    // Increment by one since first cell is employee name
                                     row.Cells[i + 1].Value = text;
                                 }
                             }
@@ -136,18 +164,22 @@ namespace Entertainment_Elevated
                     }
                 }
             }
+
+            // Update the labels to show correct total of hours of pay
             HoursLabel.Text = "Hours: " + hours.ToString();
             PayLabel.Text = "Pay: " + pay.ToString("C");
         }
 
         private void ReportButton_Click(object sender, EventArgs e)
         {
+            // Show the preview of the document to be printed
             PrintPreviewDialog.Document = PrintDocument;
             PrintPreviewDialog.ShowDialog();
         }
 
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            ScheduleDataGridView.ClearSelection();
             int height = ScheduleDataGridView.Rows.GetRowsHeight(DataGridViewElementStates.None);
             height += ScheduleDataGridView.ColumnHeadersHeight + 2;
             int width = ScheduleDataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.None) + 3;
