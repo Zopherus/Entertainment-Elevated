@@ -62,7 +62,7 @@
             // 
             // EmailTextBox
             // 
-            this.EmailTextBox.Location = new System.Drawing.Point(96, 64);
+            this.EmailTextBox.Location = new System.Drawing.Point(96, 91);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(166, 20);
             this.EmailTextBox.TabIndex = 2;
@@ -88,7 +88,7 @@
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(9, 71);
+            this.EmailLabel.Location = new System.Drawing.Point(9, 98);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(35, 13);
             this.EmailLabel.TabIndex = 6;
@@ -97,7 +97,7 @@
             // PhoneNumberLabel
             // 
             this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(9, 97);
+            this.PhoneNumberLabel.Location = new System.Drawing.Point(9, 72);
             this.PhoneNumberLabel.Name = "PhoneNumberLabel";
             this.PhoneNumberLabel.Size = new System.Drawing.Size(81, 13);
             this.PhoneNumberLabel.TabIndex = 7;
@@ -116,7 +116,7 @@
             // PhoneNumberTextBox
             // 
             this.PhoneNumberTextBox.AsciiOnly = true;
-            this.PhoneNumberTextBox.Location = new System.Drawing.Point(97, 91);
+            this.PhoneNumberTextBox.Location = new System.Drawing.Point(96, 65);
             this.PhoneNumberTextBox.Mask = "(999) 000-0000";
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(165, 20);
@@ -176,8 +176,12 @@
             this.Controls.Add(this.EmailTextBox);
             this.Controls.Add(this.LastNameTextBox);
             this.Controls.Add(this.FirstNameTextBox);
+            this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AddEmployeeForm";
             this.Text = "Add Employee";
+            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.AddEmployeeForm_HelpButtonClicked);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddEmployeeForm_FormClosed);
             this.Load += new System.EventHandler(this.AddEmployeeForm_Load);
             this.ResumeLayout(false);

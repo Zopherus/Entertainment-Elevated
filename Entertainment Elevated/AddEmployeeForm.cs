@@ -77,6 +77,18 @@ namespace Entertainment_Elevated
             // If the user typed their own position into the box, then add it to the list of positions
             if (!PositionComboBox.Items.Contains(PositionComboBox.Text))
                 Positions.Add(PositionComboBox.Text);
+
+            string errorText = "";
+            if (FirstNameTextBox.Text == "")
+                errorText += "Please enter a first name.\n";
+            if (LastNameTextBox.Text == "")
+                errorText += "Please enter a last name.\n";
+
+            // Phone number is a masked textbox 
+            if (!PhoneNumberTextBox.MaskCompleted)
+                errorText += "Please enter a complete phone number.\n";
+
+            // Don't throw error for email so an email is optional
             try
             {
                 // Create an employee object and add it to the Employee list

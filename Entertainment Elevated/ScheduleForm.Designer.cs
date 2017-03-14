@@ -39,6 +39,7 @@
             this.MenuButton = new System.Windows.Forms.Button();
             this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.HelpButton = new System.Windows.Forms.Button();
             this.ScheduleFormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // ScheduleFormPanel
             // 
+            this.ScheduleFormPanel.Controls.Add(this.HelpButton);
             this.ScheduleFormPanel.Controls.Add(this.PayLabel);
             this.ScheduleFormPanel.Controls.Add(this.HoursLabel);
             this.ScheduleFormPanel.Controls.Add(this.ReportButton);
@@ -130,6 +132,16 @@
             this.PrintPreviewDialog.Name = "PrintPreviewDialog";
             this.PrintPreviewDialog.Visible = false;
             // 
+            // HelpButton
+            // 
+            this.HelpButton.Location = new System.Drawing.Point(497, 426);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(75, 23);
+            this.HelpButton.TabIndex = 6;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
+            // 
             // ScheduleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +168,6 @@
         private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog;
         private System.Windows.Forms.Label HoursLabel;
         private System.Windows.Forms.Label PayLabel;
+        private System.Windows.Forms.Button HelpButton;
     }
 }

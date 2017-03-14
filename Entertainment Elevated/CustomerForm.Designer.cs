@@ -31,7 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.CustomerFormPanel = new System.Windows.Forms.Panel();
-            this.CustomerData = new System.Windows.Forms.Button();
             this.AddVisitButton = new System.Windows.Forms.Button();
             this.PrintReportButton = new System.Windows.Forms.Button();
             this.AddCustomerButton = new System.Windows.Forms.Button();
@@ -46,7 +45,6 @@
             // 
             // CustomerFormPanel
             // 
-            this.CustomerFormPanel.Controls.Add(this.CustomerData);
             this.CustomerFormPanel.Controls.Add(this.AddVisitButton);
             this.CustomerFormPanel.Controls.Add(this.PrintReportButton);
             this.CustomerFormPanel.Controls.Add(this.AddCustomerButton);
@@ -60,19 +58,9 @@
             this.CustomerFormPanel.Size = new System.Drawing.Size(584, 461);
             this.CustomerFormPanel.TabIndex = 0;
             // 
-            // CustomerData
-            // 
-            this.CustomerData.Location = new System.Drawing.Point(420, 215);
-            this.CustomerData.Name = "CustomerData";
-            this.CustomerData.Size = new System.Drawing.Size(152, 62);
-            this.CustomerData.TabIndex = 3;
-            this.CustomerData.Text = "Customer Data";
-            this.CustomerData.UseVisualStyleBackColor = true;
-            this.CustomerData.Click += new System.EventHandler(this.CustomerData_Click);
-            // 
             // AddVisitButton
             // 
-            this.AddVisitButton.Location = new System.Drawing.Point(420, 132);
+            this.AddVisitButton.Location = new System.Drawing.Point(420, 217);
             this.AddVisitButton.Name = "AddVisitButton";
             this.AddVisitButton.Size = new System.Drawing.Size(152, 64);
             this.AddVisitButton.TabIndex = 2;
@@ -82,20 +70,20 @@
             // 
             // PrintReportButton
             // 
-            this.PrintReportButton.Location = new System.Drawing.Point(420, 380);
+            this.PrintReportButton.Location = new System.Drawing.Point(420, 379);
             this.PrintReportButton.Name = "PrintReportButton";
             this.PrintReportButton.Size = new System.Drawing.Size(152, 69);
-            this.PrintReportButton.TabIndex = 5;
+            this.PrintReportButton.TabIndex = 4;
             this.PrintReportButton.Text = "Print Report";
             this.PrintReportButton.UseVisualStyleBackColor = true;
             this.PrintReportButton.Click += new System.EventHandler(this.ReportButton_Click);
             // 
             // AddCustomerButton
             // 
-            this.AddCustomerButton.Location = new System.Drawing.Point(420, 298);
+            this.AddCustomerButton.Location = new System.Drawing.Point(420, 299);
             this.AddCustomerButton.Name = "AddCustomerButton";
             this.AddCustomerButton.Size = new System.Drawing.Size(152, 62);
-            this.AddCustomerButton.TabIndex = 4;
+            this.AddCustomerButton.TabIndex = 3;
             this.AddCustomerButton.Text = "Add Customer";
             this.AddCustomerButton.UseVisualStyleBackColor = true;
             this.AddCustomerButton.Click += new System.EventHandler(this.AddCustomerButton_Click);
@@ -130,7 +118,7 @@
             this.MenuButton.Location = new System.Drawing.Point(12, 427);
             this.MenuButton.Name = "MenuButton";
             this.MenuButton.Size = new System.Drawing.Size(75, 23);
-            this.MenuButton.TabIndex = 6;
+            this.MenuButton.TabIndex = 5;
             this.MenuButton.Text = "Menu";
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
@@ -176,6 +164,5 @@
         private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog;
         private System.Drawing.Printing.PrintDocument PrintDocument;
         private System.Windows.Forms.Button AddVisitButton;
-        private System.Windows.Forms.Button CustomerData;
     }
 }

@@ -255,5 +255,15 @@ namespace Entertainment_Elevated
         {
             return ScheduleFormPanel;
         }
+
+        private void HelpButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You can create schedules for the employees here. "
+                     + "Click and scroll through the calendar to find the week that you want to schedule. "
+                     + "Add in the shift by simply typing in the box corresponding to the correct day and employee. "
+                     + "The tooltip on the grid helps explain how to type shifts. "
+                     + "You can also print a report to print the schedule for the week and total amount of pay and hours of that week."
+                );
+        }
     }
 }
