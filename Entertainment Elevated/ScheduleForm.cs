@@ -14,7 +14,7 @@ namespace Entertainment_Elevated
         public ScheduleForm()
         {
             InitializeComponent();
-            
+
             // The first column in the GridView will have the employee names
             ScheduleDataGridView.Columns.Add("Name", "Name");
 
@@ -31,7 +31,7 @@ namespace Entertainment_Elevated
             for (int i = 0; i < EmployeeForm.Employees.Count; i++)
             {
                 ScheduleDataGridView.Rows.Add();
-                
+
                 // Label the first cell in the row with the employee name
                 ScheduleDataGridView.Rows[i].Cells[0].Value = EmployeeForm.Employees[i].ToString();
 
@@ -67,59 +67,75 @@ namespace Entertainment_Elevated
         // This is run after the user finishes editing a cell
         private void ScheduleDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            // Get the text that the user has edited
+            // e is the cell that started this method
+            string text = ScheduleDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().ToLower();
+
+            // Return if the text is empty
+            if (text == "")
+                return;
+
+            // Remove all whitespace in the text by using a regular expression
+            text = Regex.Replace(text, @"\s+", "");
+
+            // Get the name of the column which has the day of the shift
+
+            DateTime day = DateTime.Parse(ScheduleDataGridView.Columns[e.ColumnIndex].Name);
+
+
+            // Split the text at the hyphen
+            string[] times = text.Split('-');
+
+            Shift shift = new Shift();
             try
             {
-                // Get the text that the user has edited
-                string text = ScheduleDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().ToLower();
-
-                // Return if the text is empty
-                if (text == "")
-                    return;
-
-                // Remove all whitespace in the text by using a regular expression
-                text = Regex.Replace(text, @"\s+", "");
-
-                // Get the name of the column which has the day of the shift
-                DateTime day = DateTime.Parse(ScheduleDataGridView.Columns[e.ColumnIndex].Name);
-
-                // Split the text at the hyphen
-                string[] times = text.Split('-');
-
                 // Find the number of hours from the start of the day that the shift starts and ends
                 int startHours = DateTime.Parse(times[0]).Hour;
-
                 int endHours = DateTime.Parse(times[1]).Hour;
-
+                int startMinutes = DateTime.Parse(times[0]).Minute;
+                int endMinutes = DateTime.Parse(times[1]).Minute;
+            
                 // Create new DateTimes for the starting and ending of the shift and create the shift
-                DateTime start = new DateTime(day.Year, day.Month, day.Day, startHours, 0, 0);
-                DateTime end = new DateTime(day.Year, day.Month, day.Day, endHours, 0, 0);
-                Shift shift = new Shift(start, end);
-
-                // Find which employee to add the shift to by searching through the Employee list
-                string employeeName = ScheduleDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
-                foreach (Employee employee in EmployeeForm.Employees)
-                {
-                    // Unfortunately, using employee names to compare employees could cause problems
-                    // If there are two employees with the exact same names
-                    // However, this will be extremely rare and the workaround to this problem would be complex
-                    if (employee.ToString() == employeeName)
-                    {
-                        // Add the shift to the employee
-                        employee.Shifts.Add(shift);
-                        return;
-                    }
-                }
-
-                // Update the shifts
-                DisplayShifts();
+                DateTime start = new DateTime(day.Year, day.Month, day.Day, startHours, startMinutes, 0);
+                DateTime end = new DateTime(day.Year, day.Month, day.Day, endHours, endMinutes, 0);
+                shift = new Shift(start, end);
             }
-
-            // Throw an error and display a popup box if user enters erroneous information
             catch
             {
-                MessageBox.Show("Please check the entered text.");
+                try
+                {
+                    int startHours = int.Parse(times[0]);
+                    int endHours = int.Parse(times[1]) + 12;
+                    DateTime start = new DateTime(day.Year, day.Month, day.Day, startHours, 0, 0);
+                    DateTime end = new DateTime(day.Year, day.Month, day.Day, endHours, 0, 0);
+                    shift = new Shift(start, end);
+                }
+                catch
+                {
+                    MessageBox.Show("Please check the entered text.");
+                }
             }
+            // Find which employee to add the shift to by searching through the Employee list
+            string employeeName = ScheduleDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            foreach (Employee employee in EmployeeForm.Employees)
+            {
+                // Unfortunately, using employee names to compare employees could cause problems
+                // If there are two employees with the exact same names
+                // However, this will be extremely rare and the workaround to this problem would be complex
+                if (employee.ToString() == employeeName)
+                {
+                    // First remove all shifts that are on this day
+                    employee.Shifts.RemoveAll(s => s.OnSameDay(shift));
+
+                    // Add the shift to the employee
+                    employee.Shifts.Add(shift);
+                    break;
+                }
+            }
+            // Update the shifts
+            DisplayShifts();
         }
+        // Throw an error and display a popup box if user enters erroneous information
 
         private void DisplayShifts()
         {

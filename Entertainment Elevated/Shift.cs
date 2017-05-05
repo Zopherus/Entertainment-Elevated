@@ -17,5 +17,15 @@ namespace Entertainment_Elevated
         {
             return NumberHours() * payrate;
         }
+
+        public bool OnSameDay(Shift shift)
+        {
+            // If the start times are on the same day of the year and same year, then they are in the same day
+            if (this.StartTime.DayOfYear == shift.StartTime.DayOfYear &&
+                this.StartTime.Year == shift.StartTime.Year)
+            { return true; }
+          
+            return false;
+        }
     }
 }

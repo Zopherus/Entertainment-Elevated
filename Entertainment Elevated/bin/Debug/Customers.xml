@@ -1,2 +1,78 @@
 <?xml version="1.0"?>
-<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Customer>
+    <FirstName>Gokul</FirstName>
+    <LastName>Gowri</LastName>
+    <Email>(111) 111-1111</Email>
+    <PhoneNumber />
+    <StoreVisits />
+  </Customer>
+  <Customer>
+    <FirstName>James</FirstName>
+    <LastName>Peng</LastName>
+    <Email>(111) 111-1111</Email>
+    <PhoneNumber />
+    <StoreVisits>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:31:59.916301-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.1104883-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.610901-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.6444829-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.6775628-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.710249-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.7429006-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.7764958-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.8085459-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.84233-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.8746524-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.9073644-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.941391-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:01.9743735-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+      <StoreVisit>
+        <StartTime>2017-05-04T23:32:02.007621-07:00</StartTime>
+        <EndTime>0001-01-01T00:00:00</EndTime>
+      </StoreVisit>
+    </StoreVisits>
+  </Customer>
+</ArrayOfCustomer>

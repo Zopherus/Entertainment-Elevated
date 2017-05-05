@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScheduleForm));
             this.ScheduleCalendar = new System.Windows.Forms.MonthCalendar();
             this.ScheduleFormPanel = new System.Windows.Forms.Panel();
+            this.HelpButton = new System.Windows.Forms.Button();
             this.PayLabel = new System.Windows.Forms.Label();
             this.HoursLabel = new System.Windows.Forms.Label();
             this.ReportButton = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.MenuButton = new System.Windows.Forms.Button();
             this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-            this.HelpButton = new System.Windows.Forms.Button();
             this.ScheduleFormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +66,16 @@
             this.ScheduleFormPanel.Name = "ScheduleFormPanel";
             this.ScheduleFormPanel.Size = new System.Drawing.Size(584, 461);
             this.ScheduleFormPanel.TabIndex = 1;
+            // 
+            // HelpButton
+            // 
+            this.HelpButton.Location = new System.Drawing.Point(497, 426);
+            this.HelpButton.Name = "HelpButton";
+            this.HelpButton.Size = new System.Drawing.Size(75, 23);
+            this.HelpButton.TabIndex = 6;
+            this.HelpButton.Text = "Help";
+            this.HelpButton.UseVisualStyleBackColor = true;
+            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // PayLabel
             // 
@@ -131,16 +141,6 @@
             this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
             this.PrintPreviewDialog.Name = "PrintPreviewDialog";
             this.PrintPreviewDialog.Visible = false;
-            // 
-            // HelpButton
-            // 
-            this.HelpButton.Location = new System.Drawing.Point(497, 426);
-            this.HelpButton.Name = "HelpButton";
-            this.HelpButton.Size = new System.Drawing.Size(75, 23);
-            this.HelpButton.TabIndex = 6;
-            this.HelpButton.Text = "Help";
-            this.HelpButton.UseVisualStyleBackColor = true;
-            this.HelpButton.Click += new System.EventHandler(this.HelpButton_Click);
             // 
             // ScheduleForm
             // 

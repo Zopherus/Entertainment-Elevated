@@ -68,7 +68,7 @@ namespace Entertainment_Elevated
             this.EmailTextBox.Location = new System.Drawing.Point(96, 91);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(166, 20);
-            this.EmailTextBox.TabIndex = 2;
+            this.EmailTextBox.TabIndex = 3;
             // 
             // FirstNameLabel
             // 
@@ -111,7 +111,7 @@ namespace Entertainment_Elevated
             this.AddEmployeeButton.Location = new System.Drawing.Point(27, 170);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(213, 112);
-            this.AddEmployeeButton.TabIndex = 11;
+            this.AddEmployeeButton.TabIndex = 6;
             this.AddEmployeeButton.Text = "Add Employee";
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddEmployeeButton_Click);
@@ -123,7 +123,7 @@ namespace Entertainment_Elevated
             this.PhoneNumberTextBox.Mask = "(999) 000-0000";
             this.PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             this.PhoneNumberTextBox.Size = new System.Drawing.Size(165, 20);
-            this.PhoneNumberTextBox.TabIndex = 3;
+            this.PhoneNumberTextBox.TabIndex = 2;
             // 
             // PositionComboBox
             // 
@@ -133,7 +133,7 @@ namespace Entertainment_Elevated
             this.PositionComboBox.Location = new System.Drawing.Point(96, 143);
             this.PositionComboBox.Name = "PositionComboBox";
             this.PositionComboBox.Size = new System.Drawing.Size(166, 21);
-            this.PositionComboBox.TabIndex = 10;
+            this.PositionComboBox.TabIndex = 5;
             this.toolTip.SetToolTip(this.PositionComboBox, "Type in a new position or find the correct one in the list");
             // 
             // PositionLabel

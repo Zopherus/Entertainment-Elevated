@@ -16,6 +16,9 @@ namespace Entertainment_Elevated
         public CustomerForm()
         {
             InitializeComponent();
+            ActiveControl = SearchTextBox;
+            SearchTextBox.Select();
+            SearchTextBox.Focus();
             foreach (Customer customer in Customers)
             {
                 CustomerListBox.Items.Add(customer);
@@ -82,6 +85,11 @@ namespace Entertainment_Elevated
             }
         }
 
+        private void CustomerStatisticsButton_Click(object sender, EventArgs e)
+        {
+            ChangeFormPanels<CustomerDataForm>(sender);
+        }
+
         private void MenuButton_Click(object sender, EventArgs e)
         {
             ChangeFormPanels<MainForm>(sender);
@@ -89,7 +97,12 @@ namespace Entertainment_Elevated
 
         public Panel Panel()
         {
+            ActiveControl = SearchTextBox;
+            SearchTextBox.Select();
+            SearchTextBox.Focus();
             return CustomerFormPanel;
         }
+
+        
     }
 }
