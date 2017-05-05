@@ -105,5 +105,10 @@ namespace Entertainment_Elevated
 
             Close();
         }
+
+        private void AddEmployeeForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
     }
 }

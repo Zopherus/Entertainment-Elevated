@@ -1,4 +1,7 @@
-﻿namespace Entertainment_Elevated
+﻿using System;
+using System.ComponentModel;
+
+namespace Entertainment_Elevated
 {
     partial class AddEmployeeForm
     {
