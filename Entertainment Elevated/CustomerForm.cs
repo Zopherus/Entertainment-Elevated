@@ -21,13 +21,8 @@ namespace Entertainment_Elevated
         public CustomerForm()
         {
             InitializeComponent();
-            ActiveControl = SearchTextBox;
-            SearchTextBox.Select();
-            SearchTextBox.Focus();
-            foreach (Customer customer in Customers)
-            {
-                CustomerListBox.Items.Add(customer);
-            }
+
+            CustomerListBox.DataSource = Customers;
         }
 
         // When the user tries to search for a customer
@@ -43,35 +38,16 @@ namespace Entertainment_Elevated
             RefreshListBox();
         }
 
-        private void ReportButton_Click(object sender, EventArgs e)
-        {
-            PrintPreviewDialog.Document = PrintDocument;
-            PrintPreviewDialog.ShowDialog();
-        }
-
-        private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            // Create a font to write with
-            Font font = new Font("Arial", 14, FontStyle.Bold);
-            float lineHeightFloat = font.GetHeight();
-            float verticalPrintPosition = e.MarginBounds.Top;
-            float horizontalPrintPosition = e.MarginBounds.Left;
-
-            // For each customer, write their name and how many times they have visited the FEC
-            foreach (Customer customer in Customers)
-            {
-                e.Graphics.DrawString(customer.ToString() + ": " + customer.StoreVisits.Count.ToString(), font, Brushes.Black,
-                        horizontalPrintPosition, verticalPrintPosition);
-                verticalPrintPosition += 2 * lineHeightFloat;
-            }
-        }
-
         private void AddVisitButton_Click(object sender, EventArgs e)
         {
             try
             {
                 ((Customer)CustomerListBox.SelectedItem).StoreVisits.Add(new StoreVisit(DateTime.Now));
                 CustomerAttendance[(int)DateTime.Now.DayOfWeek][DateTime.Now.Hour]++;
+
+                // Refresh the ListBox
+                CustomerListBox.DataSource = null;
+                CustomerListBox.DataSource = Customers;
             }
             catch
             {
@@ -107,8 +83,6 @@ namespace Entertainment_Elevated
             SearchTextBox.Select();
             SearchTextBox.Focus();
             return CustomerFormPanel;
-        }
-
-        
+        }        
     }
 }

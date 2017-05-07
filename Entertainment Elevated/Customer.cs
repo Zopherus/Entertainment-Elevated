@@ -7,7 +7,7 @@ namespace Entertainment_Elevated
     public class Customer : Person
     {
         // List of StoreVisits for each unique time this customer visits the FEC
-        public List<StoreVisit> StoreVisits = new List<StoreVisit>();
+        public List<StoreVisit> StoreVisits { get; private set; } = new List<StoreVisit>();
 
         // Inherit the empty constructor from the base class
         public Customer() : base()
@@ -17,6 +17,11 @@ namespace Entertainment_Elevated
         // Inherit the constructor from the base class
         public Customer(string FirstName, string LastName, string Email, string PhoneNumber) : base(FirstName, LastName, Email, PhoneNumber)
         {
+        }
+
+        public override string ToString()
+        {
+            return FirstName + " " + LastName + " - " + StoreVisits.Count.ToString();
         }
     }
 }

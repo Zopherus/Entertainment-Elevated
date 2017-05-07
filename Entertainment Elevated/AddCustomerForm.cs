@@ -14,10 +14,10 @@ namespace Entertainment_Elevated
         {
             try
             {
-                string errorText = "";
-                if (FirstNameTextBox.Text == "")
+                string errorText = string.Empty;
+                if (FirstNameTextBox.Text == string.Empty)
                     errorText += "Please enter a first name.\n";
-                if (LastNameTextBox.Text == "")
+                if (LastNameTextBox.Text == string.Empty)
                     errorText += "Please enter a last name.\n";
 
                 // Phone number is a masked textbox 
@@ -25,8 +25,7 @@ namespace Entertainment_Elevated
                     errorText += "Please enter a complete phone number.\n";
 
                 // Don't throw error for email so an email is optional
-
-                if (errorText != "")
+                if (errorText != string.Empty)
                 {
                     MessageBox.Show(errorText);
                     return;
@@ -50,7 +49,6 @@ namespace Entertainment_Elevated
         {
             MessageBox.Show("Enter in all of the information for the customer and click the button to create the new customer. "
                 + "Entering an email is optional.");
-
         }
     }
 }

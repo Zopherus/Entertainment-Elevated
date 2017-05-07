@@ -37,9 +37,9 @@ namespace Entertainment_Elevated
                     EmployeeForm.Employees = deserializedList;
                 }
             }
-            // Throw an error if this XML file is damaged in some way
             catch
             {
+                // Throw an error if this XML file is damaged in some way
                 Console.WriteLine("XML Error for Employees");
             }
 
@@ -60,8 +60,8 @@ namespace Entertainment_Elevated
                 Console.WriteLine("XML Error for Customers");
             }
 
-            //try
-           // {
+            try
+            {
                 // Repeat the same process for the Customer Attendance array
                 serializer = new XmlSerializer(typeof(int[][]));
                 using (FileStream fileStream = File.OpenRead("CustomerAttendance.xml"))
@@ -71,11 +71,11 @@ namespace Entertainment_Elevated
                     int[][] deserializedArray = (int[][])serializer.Deserialize(fileStream);
                     CustomerForm.CustomerAttendance = deserializedArray;
                 }
-            //}
-            //catch
-            //{
-            //    Console.WriteLine("XML Error for CustomerAttendance");
-            //}
+            }
+            catch
+            {
+                Console.WriteLine("XML Error for CustomerAttendance");
+            }
         }
 
         // Save the employee and customer data in an XML file
@@ -99,6 +99,7 @@ namespace Entertainment_Elevated
                 serializer.Serialize(fileStream, CustomerForm.Customers);
             }
 
+            // Repeat the same process for the customer attendance
             File.WriteAllText("CustomerAttendance.xml", string.Empty);
             serializer = new XmlSerializer(typeof(int[][]));
             using (FileStream fileStream = File.OpenWrite("CustomerAttendance.xml"))

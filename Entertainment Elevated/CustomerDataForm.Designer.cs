@@ -30,17 +30,22 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerDataForm));
             this.CustomerDataFormPanel = new System.Windows.Forms.Panel();
-            this.MenuButton = new System.Windows.Forms.Button();
-            this.CustomerButton = new System.Windows.Forms.Button();
-            this.DayOfWeekComboBox = new System.Windows.Forms.ComboBox();
             this.CustomerDataChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.DayOfWeekComboBox = new System.Windows.Forms.ComboBox();
+            this.CustomerButton = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
+            this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
             this.CustomerDataFormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerDataChart)).BeginInit();
             this.SuspendLayout();
             // 
             // CustomerDataFormPanel
             // 
+            this.CustomerDataFormPanel.Controls.Add(this.PrintButton);
             this.CustomerDataFormPanel.Controls.Add(this.CustomerDataChart);
             this.CustomerDataFormPanel.Controls.Add(this.DayOfWeekComboBox);
             this.CustomerDataFormPanel.Controls.Add(this.CustomerButton);
@@ -51,25 +56,17 @@
             this.CustomerDataFormPanel.Size = new System.Drawing.Size(584, 461);
             this.CustomerDataFormPanel.TabIndex = 0;
             // 
-            // MenuButton
+            // CustomerDataChart
             // 
-            this.MenuButton.Location = new System.Drawing.Point(497, 435);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(75, 23);
-            this.MenuButton.TabIndex = 8;
-            this.MenuButton.Text = "Menu";
-            this.MenuButton.UseVisualStyleBackColor = true;
-            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
-            // 
-            // CustomerButton
-            // 
-            this.CustomerButton.Location = new System.Drawing.Point(12, 435);
-            this.CustomerButton.Name = "CustomerButton";
-            this.CustomerButton.Size = new System.Drawing.Size(75, 23);
-            this.CustomerButton.TabIndex = 7;
-            this.CustomerButton.Text = "Customers";
-            this.CustomerButton.UseVisualStyleBackColor = true;
-            this.CustomerButton.Click += new System.EventHandler(this.CustomerButton_Click);
+            chartArea1.Name = "ChartArea1";
+            this.CustomerDataChart.ChartAreas.Add(chartArea1);
+            this.CustomerDataChart.Location = new System.Drawing.Point(12, 51);
+            this.CustomerDataChart.Name = "CustomerDataChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.CustomerDataChart.Series.Add(series1);
+            this.CustomerDataChart.Size = new System.Drawing.Size(560, 378);
+            this.CustomerDataChart.TabIndex = 10;
             // 
             // DayOfWeekComboBox
             // 
@@ -89,18 +86,49 @@
             this.DayOfWeekComboBox.TabIndex = 9;
             this.DayOfWeekComboBox.SelectedIndexChanged += new System.EventHandler(this.DayOfWeekComboBox_SelectedIndexChanged);
             // 
-            // CustomerDataChart
+            // CustomerButton
             // 
-            chartArea1.Name = "ChartArea1";
-            this.CustomerDataChart.ChartAreas.Add(chartArea1);
-            this.CustomerDataChart.Location = new System.Drawing.Point(12, 51);
-            this.CustomerDataChart.Name = "CustomerDataChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            this.CustomerDataChart.Series.Add(series1);
-            this.CustomerDataChart.Size = new System.Drawing.Size(560, 378);
-            this.CustomerDataChart.TabIndex = 10;
-            this.CustomerDataChart.Text = "chart1";
+            this.CustomerButton.Location = new System.Drawing.Point(12, 435);
+            this.CustomerButton.Name = "CustomerButton";
+            this.CustomerButton.Size = new System.Drawing.Size(75, 23);
+            this.CustomerButton.TabIndex = 7;
+            this.CustomerButton.Text = "Customers";
+            this.CustomerButton.UseVisualStyleBackColor = true;
+            this.CustomerButton.Click += new System.EventHandler(this.CustomerButton_Click);
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.Location = new System.Drawing.Point(497, 435);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(75, 23);
+            this.MenuButton.TabIndex = 8;
+            this.MenuButton.Text = "Menu";
+            this.MenuButton.UseVisualStyleBackColor = true;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // PrintButton
+            // 
+            this.PrintButton.Location = new System.Drawing.Point(497, 10);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(75, 23);
+            this.PrintButton.TabIndex = 1;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // PrintPreviewDialog
+            // 
+            this.PrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.PrintPreviewDialog.Enabled = true;
+            this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
+            this.PrintPreviewDialog.Name = "PrintPreviewDialog";
+            this.PrintPreviewDialog.Visible = false;
+            // 
+            // PrintDocument
+            // 
+            this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
             // 
             // CustomerDataForm
             // 
@@ -123,5 +151,8 @@
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.ComboBox DayOfWeekComboBox;
         private System.Windows.Forms.DataVisualization.Charting.Chart CustomerDataChart;
+        private System.Windows.Forms.Button PrintButton;
+        private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog;
+        private System.Drawing.Printing.PrintDocument PrintDocument;
     }
 }

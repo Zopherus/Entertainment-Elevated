@@ -1,1 +1,0 @@
-start /d "%~dp0Entertainment Elevated\Entertainment Elevated\bin\Debug" Entertainment-Elevated.exe

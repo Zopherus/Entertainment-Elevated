@@ -35,6 +35,7 @@ namespace Entertainment_Elevated
         private void SetEmployeeListBox()
         {
             EmployeeListBox.Items.Clear();
+
             // Use a delegate operation to quickly add all of the employee names into the ListBox
             EmployeeForm.Employees.ForEach(employee => EmployeeListBox.Items.Add(employee));
         }

@@ -12,7 +12,7 @@ namespace Entertainment_Elevated
         public Shift(DateTime StartTime, DateTime EndTime) : base(StartTime, EndTime)
         { }
 
-        //  Calculate the total pay of the shift by using the base NumberHours method
+        // Calculate the total pay of the shift by using the base NumberHours method
         public decimal Pay(decimal payrate)
         {
             return NumberHours() * payrate;
@@ -23,7 +23,7 @@ namespace Entertainment_Elevated
             // If the start times are on the same day of the year and same year, then they are in the same day
             if (this.StartTime.DayOfYear == shift.StartTime.DayOfYear &&
                 this.StartTime.Year == shift.StartTime.Year)
-            { return true; }
+                return true; 
           
             return false;
         }

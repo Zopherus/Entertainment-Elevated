@@ -82,14 +82,13 @@ namespace Entertainment_Elevated
 
             DateTime day = DateTime.Parse(ScheduleDataGridView.Columns[e.ColumnIndex].Name);
 
-
             // Split the text at the hyphen
             string[] times = text.Split('-');
 
             Shift shift = new Shift();
             try
             {
-                // Find the number of hours from the start of the day that the shift starts and ends
+                // Find the number of hours and minutes from the start of the day that the shift starts and ends
                 int startHours = DateTime.Parse(times[0]).Hour;
                 int endHours = DateTime.Parse(times[1]).Hour;
                 int startMinutes = DateTime.Parse(times[0]).Minute;
@@ -102,9 +101,12 @@ namespace Entertainment_Elevated
             }
             catch
             {
+                // The previous parsing method will fail if a time such as 9-5 is entered
+                // Rectify that error by regularly parsing it
                 try
                 {
                     int startHours = int.Parse(times[0]);
+                    // Assume the second time is PM
                     int endHours = int.Parse(times[1]) + 12;
                     DateTime start = new DateTime(day.Year, day.Month, day.Day, startHours, 0, 0);
                     DateTime end = new DateTime(day.Year, day.Month, day.Day, endHours, 0, 0);
@@ -112,9 +114,11 @@ namespace Entertainment_Elevated
                 }
                 catch
                 {
+                    // Unable to parse. Throw an error
                     MessageBox.Show("Please check the entered text.");
                 }
             }
+
             // Find which employee to add the shift to by searching through the Employee list
             string employeeName = ScheduleDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
             foreach (Employee employee in EmployeeForm.Employees)
@@ -132,10 +136,10 @@ namespace Entertainment_Elevated
                     break;
                 }
             }
+
             // Update the shifts
             DisplayShifts();
         }
-        // Throw an error and display a popup box if user enters erroneous information
 
         private void DisplayShifts()
         {
@@ -278,8 +282,7 @@ namespace Entertainment_Elevated
                      + "Click and scroll through the calendar to find the week that you want to schedule. "
                      + "Add in the shift by simply typing in the box corresponding to the correct day and employee. "
                      + "The tooltip on the grid helps explain how to type shifts. "
-                     + "You can also print a report to print the schedule for the week and total amount of pay and hours of that week."
-                );
+                     + "You can also print a report to print the schedule for the week and total amount of pay and hours of that week.");
         }
     }
 }

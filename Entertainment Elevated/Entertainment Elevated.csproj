@@ -61,6 +61,7 @@
     <Compile Include="AddEmployeeForm.Designer.cs">
       <DependentUpon>AddEmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeFormPanel.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="CustomerDataForm.cs">
       <SubType>Form</SubType>

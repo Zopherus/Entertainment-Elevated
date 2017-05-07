@@ -68,7 +68,6 @@ C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Ente
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.CustomerForm.resources
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.EmployeeForm.resources
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.GeneralForm.resources
-C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.MainForm.resources
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.Properties.Resources.resources
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.ScheduleForm.resources
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.csproj.GenerateResource.Cache
@@ -96,3 +95,6 @@ C:\Users\ejz19\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\E
 C:\Users\ejz19\Desktop\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment Elevated.csproj.GenerateResource.Cache
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.CustomerDataForm.resources
 C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.MenuForm.resources
+C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.DeleteEmployeeForm.resources
+C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.HelpForm.resources
+C:\Users\ejz19\Desktop\Github\Entertainment-Elevated\Entertainment Elevated\Entertainment Elevated\obj\Debug\Entertainment_Elevated.MenuForm.resources

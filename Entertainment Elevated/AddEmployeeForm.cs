@@ -7,11 +7,11 @@ namespace Entertainment_Elevated
 {
     public partial class AddEmployeeForm : Form
     {
-        // The list of different positions that an employee can have
-        public List<string> Positions { get; private set; } = new List<string>();
-
         private DataGridView gridView;
 
+        // The list of different positions that an employee can have
+        public List<string> Positions { get; private set; } = new List<string>();
+        
         // Pass in the employee datagridview from the employeeForm to refresh it
         public AddEmployeeForm(DataGridView GridView)
         {
@@ -56,7 +56,7 @@ namespace Entertainment_Elevated
             {
                 foreach (string position in Positions)
                 {
-                    if (position != "")
+                    if (position != string.Empty)
                         streamWriter.WriteLine(position);
                 }
             }
@@ -89,11 +89,17 @@ namespace Entertainment_Elevated
                 errorText += "Please enter a complete phone number.\n";
 
             // Don't throw error for email so an email is optional
+            if (errorText != "")
+            {
+                MessageBox.Show(errorText);
+                return;
+            }
+
             try
             {
                 // Create an employee object and add it to the Employee list
                 Employee employee = new Employee(FirstNameTextBox.Text, LastNameTextBox.Text, PhoneNumberTextBox.Text,
-                    EmailTextBox.Text, PositionComboBox.Text, decimal.Parse(PayrateTextbox.Text));
+                                                EmailTextBox.Text, PositionComboBox.Text, decimal.Parse(PayrateTextbox.Text));
                 EmployeeForm.Employees.Add(employee);
             }
             catch
@@ -108,7 +114,6 @@ namespace Entertainment_Elevated
 
         private void AddEmployeeForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
         }
     }
 }

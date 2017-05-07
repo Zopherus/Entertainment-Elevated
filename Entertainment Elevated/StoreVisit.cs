@@ -28,11 +28,12 @@ namespace Entertainment_Elevated
         public decimal NumberHours()
         {
             TimeSpan timeSpan = EndTime.Subtract(StartTime);
+
             // Calculate the number of hours of the visit by taking the number of hours
             // Then adding on the number of minutes
             // Use an 'm' suffix to convert 60 to a decimal
             // This forces the / operator to be a decimal operator to calculate the current decimal to return
-            return timeSpan.Hours + timeSpan.Minutes / 60m;
+            return timeSpan.Hours + (timeSpan.Minutes / 60m);
         }
     }
 }

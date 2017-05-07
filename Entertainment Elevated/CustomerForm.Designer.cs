@@ -29,18 +29,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerForm));
             this.CustomerFormPanel = new System.Windows.Forms.Panel();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
+            this.CustomerStatisticsButton = new System.Windows.Forms.Button();
             this.AddVisitButton = new System.Windows.Forms.Button();
-            this.PrintReportButton = new System.Windows.Forms.Button();
             this.AddCustomerButton = new System.Windows.Forms.Button();
             this.CustomerListBox = new System.Windows.Forms.ListBox();
             this.SearchLabel = new System.Windows.Forms.Label();
             this.MenuButton = new System.Windows.Forms.Button();
-            this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
-            this.PrintDocument = new System.Drawing.Printing.PrintDocument();
-            this.CustomerStatisticsButton = new System.Windows.Forms.Button();
-            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.CustomerFormPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +45,6 @@
             this.CustomerFormPanel.Controls.Add(this.SearchTextBox);
             this.CustomerFormPanel.Controls.Add(this.CustomerStatisticsButton);
             this.CustomerFormPanel.Controls.Add(this.AddVisitButton);
-            this.CustomerFormPanel.Controls.Add(this.PrintReportButton);
             this.CustomerFormPanel.Controls.Add(this.AddCustomerButton);
             this.CustomerFormPanel.Controls.Add(this.CustomerListBox);
             this.CustomerFormPanel.Controls.Add(this.SearchLabel);
@@ -60,9 +55,26 @@
             this.CustomerFormPanel.Size = new System.Drawing.Size(584, 461);
             this.CustomerFormPanel.TabIndex = 10;
             // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Location = new System.Drawing.Point(62, 21);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(182, 20);
+            this.SearchTextBox.TabIndex = 0;
+            // 
+            // CustomerStatisticsButton
+            // 
+            this.CustomerStatisticsButton.Location = new System.Drawing.Point(420, 386);
+            this.CustomerStatisticsButton.Name = "CustomerStatisticsButton";
+            this.CustomerStatisticsButton.Size = new System.Drawing.Size(152, 62);
+            this.CustomerStatisticsButton.TabIndex = 4;
+            this.CustomerStatisticsButton.Text = "Customer Statistics";
+            this.CustomerStatisticsButton.UseVisualStyleBackColor = true;
+            this.CustomerStatisticsButton.Click += new System.EventHandler(this.CustomerStatisticsButton_Click);
+            // 
             // AddVisitButton
             // 
-            this.AddVisitButton.Location = new System.Drawing.Point(420, 173);
+            this.AddVisitButton.Location = new System.Drawing.Point(420, 248);
             this.AddVisitButton.Name = "AddVisitButton";
             this.AddVisitButton.Size = new System.Drawing.Size(152, 64);
             this.AddVisitButton.TabIndex = 2;
@@ -70,19 +82,9 @@
             this.AddVisitButton.UseVisualStyleBackColor = true;
             this.AddVisitButton.Click += new System.EventHandler(this.AddVisitButton_Click);
             // 
-            // PrintReportButton
-            // 
-            this.PrintReportButton.Location = new System.Drawing.Point(420, 379);
-            this.PrintReportButton.Name = "PrintReportButton";
-            this.PrintReportButton.Size = new System.Drawing.Size(152, 69);
-            this.PrintReportButton.TabIndex = 5;
-            this.PrintReportButton.Text = "Print Report";
-            this.PrintReportButton.UseVisualStyleBackColor = true;
-            this.PrintReportButton.Click += new System.EventHandler(this.ReportButton_Click);
-            // 
             // AddCustomerButton
             // 
-            this.AddCustomerButton.Location = new System.Drawing.Point(420, 243);
+            this.AddCustomerButton.Location = new System.Drawing.Point(420, 318);
             this.AddCustomerButton.Name = "AddCustomerButton";
             this.AddCustomerButton.Size = new System.Drawing.Size(152, 62);
             this.AddCustomerButton.TabIndex = 3;
@@ -117,38 +119,6 @@
             this.MenuButton.UseVisualStyleBackColor = true;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // PrintPreviewDialog
-            // 
-            this.PrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.PrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.PrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
-            this.PrintPreviewDialog.Document = this.PrintDocument;
-            this.PrintPreviewDialog.Enabled = true;
-            this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
-            this.PrintPreviewDialog.Name = "PrintPreviewDialog";
-            this.PrintPreviewDialog.Visible = false;
-            // 
-            // PrintDocument
-            // 
-            this.PrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.PrintDocument_PrintPage);
-            // 
-            // CustomerStatisticsButton
-            // 
-            this.CustomerStatisticsButton.Location = new System.Drawing.Point(420, 311);
-            this.CustomerStatisticsButton.Name = "CustomerStatisticsButton";
-            this.CustomerStatisticsButton.Size = new System.Drawing.Size(152, 62);
-            this.CustomerStatisticsButton.TabIndex = 4;
-            this.CustomerStatisticsButton.Text = "Customer Statistics";
-            this.CustomerStatisticsButton.UseVisualStyleBackColor = true;
-            this.CustomerStatisticsButton.Click += new System.EventHandler(this.CustomerStatisticsButton_Click);
-            // 
-            // SearchTextBox
-            // 
-            this.SearchTextBox.Location = new System.Drawing.Point(62, 21);
-            this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(182, 20);
-            this.SearchTextBox.TabIndex = 0;
-            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,9 +140,6 @@
         private System.Windows.Forms.Label SearchLabel;
         private System.Windows.Forms.ListBox CustomerListBox;
         private System.Windows.Forms.Button AddCustomerButton;
-        private System.Windows.Forms.Button PrintReportButton;
-        private System.Windows.Forms.PrintPreviewDialog PrintPreviewDialog;
-        private System.Drawing.Printing.PrintDocument PrintDocument;
         private System.Windows.Forms.Button AddVisitButton;
         private System.Windows.Forms.Button CustomerStatisticsButton;
         private System.Windows.Forms.TextBox SearchTextBox;

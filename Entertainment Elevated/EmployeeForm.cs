@@ -12,9 +12,9 @@ namespace Entertainment_Elevated
         public EmployeeForm()
         {
             InitializeComponent();
+
             // Connect the GridView to the Employees List
-            //if (Employees.Count > 0)
-                EmployeeDataGridView.DataSource = Employees;
+            EmployeeDataGridView.DataSource = Employees;
             
             // Order the Columns in the GridView
             EmployeeDataGridView.Columns["FirstName"].DisplayIndex = 0;
@@ -22,11 +22,10 @@ namespace Entertainment_Elevated
             EmployeeDataGridView.Columns["Email"].DisplayIndex = 2;
             EmployeeDataGridView.Columns["PhoneNumber"].DisplayIndex = 3;
             EmployeeDataGridView.Columns["Payrate"].DisplayIndex = 4;
-            EmployeeDataGridView.Columns["Position"].DisplayIndex = 5;
-            
+            EmployeeDataGridView.Columns["Position"].DisplayIndex = 5;            
 
             // Allow the user to sort by certain columns
-            foreach(DataGridViewColumn column in EmployeeDataGridView.Columns)
+            foreach (DataGridViewColumn column in EmployeeDataGridView.Columns)
             {
                 column.SortMode = DataGridViewColumnSortMode.Automatic;
             }

@@ -115,9 +115,9 @@
 
         #endregion
         public System.Windows.Forms.Panel EmployeeFormPanel;
+        public System.Windows.Forms.DataGridView EmployeeDataGridView;
         private System.Windows.Forms.Button MenuButton;
         private System.Windows.Forms.Button AddEmployeeButton;
-        public System.Windows.Forms.DataGridView EmployeeDataGridView;
         private System.Windows.Forms.Button DeleteEmployeeButton;
     }
 }
