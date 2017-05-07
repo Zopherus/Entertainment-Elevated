@@ -100,11 +100,11 @@
       <DependentUpon>HelpForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IPanelForm.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
@@ -141,8 +141,8 @@
     <EmbeddedResource Include="HelpForm.resx">
       <DependentUpon>HelpForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

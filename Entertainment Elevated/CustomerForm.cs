@@ -10,8 +10,13 @@ namespace Entertainment_Elevated
     {
         // Is a consideration to use a hash table here, especially if the customer list becomes larger and larger
         // But hashing the names of the customers does not allow searching for part of a customer's name
-        // Best compromise is to use a sorted alphabetically list for logarithmic search time
+        // So a List is used instead
         public static List<Customer> Customers = new List<Customer>();
+
+        // The jagged array for when customers come into the store
+        // Jagged arrays generally run faster and are easier to deal with than a 2D array
+        // Also, jagged arrays are XML serializable and 2D arrays are not which makes it easier to save the data
+        public static int[][] CustomerAttendance = new int[7][];
 
         public CustomerForm()
         {
@@ -66,6 +71,7 @@ namespace Entertainment_Elevated
             try
             {
                 ((Customer)CustomerListBox.SelectedItem).StoreVisits.Add(new StoreVisit(DateTime.Now));
+                CustomerAttendance[(int)DateTime.Now.DayOfWeek][DateTime.Now.Hour]++;
             }
             catch
             {
@@ -92,7 +98,7 @@ namespace Entertainment_Elevated
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            ChangeFormPanels<MainForm>(sender);
+            ChangeFormPanels<MenuForm>(sender);
         }
 
         public Panel Panel()

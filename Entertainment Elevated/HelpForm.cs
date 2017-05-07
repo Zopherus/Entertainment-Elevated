@@ -18,7 +18,7 @@ namespace Entertainment_Elevated
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            ChangeFormPanels<MainForm>(sender);
+            ChangeFormPanels<MenuForm>(sender);
         }
 
         // To satisfy the IPanelForm interface requirement

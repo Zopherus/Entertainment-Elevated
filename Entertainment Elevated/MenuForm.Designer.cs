@@ -1,6 +1,6 @@
 ﻿namespace Entertainment_Elevated
 {
-    partial class MainForm
+    partial class MenuForm
     {
         /// <summary>
         /// Required designer variable.

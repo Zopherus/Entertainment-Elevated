@@ -15,7 +15,7 @@ namespace Entertainment_Elevated
         public GeneralForm()
         {
             // Start with the Main Menu Screen
-            ChangeFormPanels<MainForm>(this);
+            ChangeFormPanels<MenuForm>(this);
             InitializeComponent();
         }
 
@@ -59,6 +59,23 @@ namespace Entertainment_Elevated
             {
                 Console.WriteLine("XML Error for Customers");
             }
+
+            //try
+           // {
+                // Repeat the same process for the Customer Attendance array
+                serializer = new XmlSerializer(typeof(int[][]));
+                using (FileStream fileStream = File.OpenRead("CustomerAttendance.xml"))
+                {
+                    if (fileStream.Length == 0)
+                        return;
+                    int[][] deserializedArray = (int[][])serializer.Deserialize(fileStream);
+                    CustomerForm.CustomerAttendance = deserializedArray;
+                }
+            //}
+            //catch
+            //{
+            //    Console.WriteLine("XML Error for CustomerAttendance");
+            //}
         }
 
         // Save the employee and customer data in an XML file
@@ -80,6 +97,13 @@ namespace Entertainment_Elevated
             using (FileStream fileStream = File.OpenWrite("Customers.xml"))
             {
                 serializer.Serialize(fileStream, CustomerForm.Customers);
+            }
+
+            File.WriteAllText("CustomerAttendance.xml", string.Empty);
+            serializer = new XmlSerializer(typeof(int[][]));
+            using (FileStream fileStream = File.OpenWrite("CustomerAttendance.xml"))
+            {
+                serializer.Serialize(fileStream, CustomerForm.CustomerAttendance);
             }
         }
     }

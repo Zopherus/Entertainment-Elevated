@@ -4,9 +4,9 @@ using static Entertainment_Elevated.ChangeFormPanel;
 
 namespace Entertainment_Elevated
 {
-    public partial class MainForm : Form, IPanelForm
+    public partial class MenuForm : Form, IPanelForm
     {
-        public MainForm()
+        public MenuForm()
         {
             InitializeComponent();
         }
